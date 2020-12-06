@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Str;
 
 
@@ -19,23 +19,21 @@ class DatabaseSeeder extends Seeder
     {
       	$this->truncateTables([
     		'users',
-    		'profiles',
+            'profiles',
     		'posts',
-    		'tags',
-    		'categories'
+            'categories',
+    		'tags'
+    		
 
     	]);
 
 	    $this->call(ProfilesSeeder::class);
+        $this->call(UsersTableSeeder::class);
 	    $this->call(CategoriesTableSeeder::class);
 	    $this->call(TagsTableSeeder::class);
 	    $this->call(PostsTableSeeder::class);	    
 
-		DB::table('users')->insert([
-            'name' => Str::random(5),
-            'email' => Str::random(5).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+	
     }
 
     protected function truncateTables(array $tables)

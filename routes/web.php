@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 //use App\Http\Livewire\PostComp;
 
@@ -23,3 +25,11 @@ Route::get('/post', function () {
     return view('post');
 });
 //Route::get('/posts',Post::class);
+
+Route::get('/users', function(){
+	$users = User::withCount(['posts','comments'])->get();
+
+	return view('user',compact('users'));
+});
+
+

@@ -19,10 +19,16 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('body');
 
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('set null');
+
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')
             ->onUpdate('cascade')
             ->onDelete('set null');
+
 
             $table->string('file')->nullable;
             $table->string('status')->nullable;

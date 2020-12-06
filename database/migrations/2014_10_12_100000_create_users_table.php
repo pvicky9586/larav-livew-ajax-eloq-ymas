@@ -21,12 +21,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+
 
             $table->unsignedBigInteger('profile_id')->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles')
             ->onDelete('set null')
             ->onUpdate('cascade');
+
+             $table->timestamps();
         });
     }
 
