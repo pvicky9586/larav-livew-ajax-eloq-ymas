@@ -17,4 +17,9 @@ class Post extends Model
     	'file'
     ];
 
+    public function comments()
+    {
+           return $this->hasMany(Comment::class);
+    }
+
 }

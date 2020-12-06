@@ -17,17 +17,15 @@ class CategoryFactory extends Factory
 
     /**
      * Define the model's default state.
-     *
-     * @return array
+       * @return array
      */
     public function definition()
     {
-        $title = $this->faker->sentence;
+        $title = $this->faker->unique()->text(5);
         return [
-            'name' => $title,
-            'slug' => Str::camel($title),
-            'body' => $this->faker->paragraph,
-        ];
+            'name' => Str::camel($title),
+            'detall' => $this->faker->paragraph
+           ];
 
         //Str::camel -> //quita espacio y conviente depues de palabra, la primera letra de la palabra siguiente en mayuscula
         //Str::slug ->conviente todo en minuscula y espacios a '-'

@@ -32,4 +32,13 @@ Route::get('/users', function(){
 	return view('user',compact('users'));
 });
 
+Route::get('/count', function(){
+	return view('Count');
+})->name('counts');
+
+Route::get('/grub', function(){
+	return view('Grub');
+})->name('grub');
+
+
 

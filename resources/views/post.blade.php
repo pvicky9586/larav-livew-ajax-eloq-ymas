@@ -1,4 +1,4 @@
-@extends('layaout')
+@extends('layout')
 @section('content')
 <dir>
 	@livewire('post-comp')

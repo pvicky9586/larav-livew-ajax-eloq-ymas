@@ -22,9 +22,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-         //$title = $this->faker->unique()->word(5);
+        
         return [
-            'name' => $this->faker->text(10),
+            //
            ];
     }
 }

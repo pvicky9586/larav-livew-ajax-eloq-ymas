@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Support\Str;
 
 
@@ -21,17 +20,24 @@ class DatabaseSeeder extends Seeder
     		'users',
             'profiles',
     		'posts',
-            'categories',
-    		'tags'
+            'comments',
+            'tags',
+            'categories'
+    		
     		
 
     	]);
 
 	    $this->call(ProfilesSeeder::class);
         $this->call(UsersTableSeeder::class);
-	    $this->call(CategoriesTableSeeder::class);
-	    $this->call(TagsTableSeeder::class);
-	    $this->call(PostsTableSeeder::class);	    
+
+      //  $this->call(TagsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+                
+	    $this->call(PostsTableSeeder::class);	
+        $this->call(CommentsTableSeeder::class);    
+       
+        
 
 	
     }

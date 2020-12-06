@@ -10,6 +10,14 @@ class Category extends Model
     use HasFactory;
     protected $fillable = [
     	'name',
-    	'body'
+    	'detall',
+    	'tag_id'
     ];
+
+
+       public function tag()
+        {
+            return $this->hasOne(Tag::class);
+        }
+
 }
