@@ -37,7 +37,7 @@ Route::get('/count', function(){
 })->name('counts');
 
 Route::get('/grub', function(){
-	return view('Grub');
+	return view('Grub.Grub');
 })->name('grub');
 
 
