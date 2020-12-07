@@ -19,7 +19,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
 
 Route::get('/post', function () {
     return view('post');
@@ -28,8 +28,7 @@ Route::get('/post', function () {
 
 Route::get('/users', function(){
 	$users = User::withCount(['posts','comments'])->get();
-
-	return view('user',compact('users'));
+	return $users;
 });
 
 Route::get('/count', function(){
@@ -39,6 +38,10 @@ Route::get('/count', function(){
 Route::get('/grub', function(){
 	return view('Grub.Grub');
 })->name('grub');
+
+Route::get('/menu', function(){
+	return view('Menu');
+})->name('menu');
 
 
 
