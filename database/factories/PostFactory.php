@@ -24,9 +24,9 @@ class PostFactory extends Factory
     public function definition()
     {
          return [
-          'title' => $this->faker->text(20), //20 caracteres
-          'body' => $this->faker->text(100),  //50 caracteres
-          'file' => $this->faker->imageUrl($width = 1200, $height = 400),
+          'title' => $this->faker->text(200), //20 caracteres
+          'body' => $this->faker->text(300),  //50 caracteres
+          'file' => $this->faker->imageUrl($width = 800, $height = 600),
           'status' => $this->faker->randomElement(['0','1']),
 
           'category_id'=>rand(1,10), //crea id aleatorios ten en cuenta que sera que no supere la cantidad de registro falso que hallas insertado

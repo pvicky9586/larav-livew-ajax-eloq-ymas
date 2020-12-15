@@ -1,4 +1,4 @@
-	@include('Grub.form')
+	@include('Crub.form')
 <div align="center">
 	<button wire:click="store"  class="btn btn-primary">
 		Guardar

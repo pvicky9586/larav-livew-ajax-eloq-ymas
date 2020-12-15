@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 
-//use App\Http\Livewire\PostComp;
+
+
+//use App\Http\Controllers\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,27 +24,45 @@ Route::get('/', function () {
     return view('welcome');
 })->name('inicio');
 
-Route::get('/post', function () {
-    return view('post');
-});
-//Route::get('/posts',Post::class);
-
-Route::get('/users', function(){
-	$users = User::withCount(['posts','comments'])->get();
-	return $users;
-});
 
 Route::get('/count', function(){
-	return view('Count');
+	return view('Count.Count');
 })->name('counts');
 
-Route::get('/grub', function(){
-	return view('Grub.Grub');
-})->name('grub');
+Route::get('/crub', function(){
+	return view('Crub.crub');
+})->name('crub');
 
 Route::get('/menu', function(){
-	return view('Menu');
+	return view('Menus.Menu');
 })->name('menu');
 
+Route::get('/search', function(){
+	return view('Search.Search');
+})->name('search');
 
 
+Route::get('/posts', function(){
+	return view('PublicPost.index');
+})->name('posts');
+
+
+
+Route::get('/NewPost', function(){
+	return view('PublicPost.create');
+})->name('NewPost');
+
+
+
+
+Route::resource('/modal','PostCont');
+
+
+
+
+Route::group(['middleware' => ['web']], function() {
+  Route::resource('post','PostController');
+  Route::POST('store','PostController@store');
+  Route::POST('editPost','PostController@editPost');
+  Route::POST('deletePost','PostController@deletePost');
+});

@@ -4,7 +4,7 @@
             <small>{{ session('mensaje') }}  </small>
         </div>
     @endif
-  <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >           
+ <!--  <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >  -->          
                     
     <table class="table">           
         <thead class="thead-dark">          
@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-         <?php $cont = 1; ?> 
+  
         @foreach ($posts as $post)
             <tr>
                 <td>{{ $post->title }}</td>
@@ -30,10 +30,9 @@
                     </button> 
                 </td>
             </tr>
-        <?php $cont= $cont + 1; ?>
         @endforeach
     </tbody>
 </table>
     <div style="color:blue;">
-        {{ $posts->links() }}
+       <!--  {{ $posts->links() }} -->
     </div>

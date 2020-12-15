@@ -1,12 +1,12 @@
 <div class="container" align="center" style="margin-top:10%;">
-	<h1 align="center">GRUB</h1>
+	<h1 align="center">CRUB</h1>
 	<div class="tool-liv" style="display:flex;margin-top:2%;">
-		  <div style="margin-right:2%;" class="">
-			@include("Grub.$view") 
+		  <div style="margin-right:3%;" class="">
+			@include("Crub.$view") 
 		</div>
 		
-	   <div class="tool-table">
-			@include('Grub.grub_list')  
+	   <div class="">
+			@include('Crub.crub_list')  
 	   </div>	
 	</div>
 </div>
