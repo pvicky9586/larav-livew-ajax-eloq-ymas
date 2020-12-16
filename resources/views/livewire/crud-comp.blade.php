@@ -1,5 +1,5 @@
-<div class="container" align="center" style="margin-top:10%;">
-	<h1 align="center">CRUB</h1>
+<div class="container marg-comp" align="center">
+	<h1 align="center">CRUD</h1>
 	<div class="tool-liv" style="display:flex;margin-top:2%;">
 		  <div style="margin-right:3%;" class="">
 			@include("crud_larav-livew.$view") 

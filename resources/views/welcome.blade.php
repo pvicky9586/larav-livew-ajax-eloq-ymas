@@ -3,31 +3,34 @@
 
 
 
- <div class= "container" align="center">
-   
-      	<div align="content" style="display: flex;">
-      		<div>
-      			<img src="{{asset('images/laravel-livewire.jpg')}}" width="500" height="450">
-      		</div>
-      		<div>
-      			<img src="{{asset('images/eloquent.jpg')}}" width="400" height="400">
-      		</div>
-      	</div>
+   <div  align="center">
+     
+        	<div align="content" class= "container" style="display: flex; margin-top: 3%;">
+        		<div>
+        			<img src="{{asset('images/laravel-livewire.jpg')}}" width="500" height="250">
+        		</div>
+        		<div>
+        			<img src="{{asset('images/eloquent.jpg')}}" width="400" height="250">
+        		</div>
+        	</div>
 
-</div>
+  </div>
 <div style="display: flex;">  
 
         <!-- GRUB --> 
        <div class="group">
+          <h2 class="display-5">CRUD  con Livewire</h2> 
        		<img src="{{asset('images/crub.png')}}" align="center" class="img-tam">  
-       		<h2 class="display-5">CRUD</h2>          
-       	  	<label>Cuando optamos a diseño de una API generalmete lo hacemos por la necesidad en registrar datos de en nuestra Base de datos. informacion que posterior mente necesitemos mostrar, actualizar y segun ser el caso eliminar. Ales traigo un pequeño ejercicio donde podra:</label>
+       		         
+       	  	<label style="font-size: 2rem;">Cuando necesitamos insertar, editar; registros en una Base de Datos. Es alli entonces donde requerimos dominar la mejor herramienta que nos podria facilitar este trabajo. orientada siempre a la facilidad del cliente (rapido, practico y seguro)
+            </label>
           <details>
-             <summary>incluye:</summary>
+             <summary>Crud -- incluye:</summary>
          		<div style="padding-left: 8%;">
          			<li>listar</li>
          			<li>Registrar</li>
          			<li>Actualizar</li> 
+              <li>Eliminar</li> 
               <br>
                <a href="{{ route('crud_larav-livew')}}">Ejercicio</a>   			
          		</div>
@@ -35,11 +38,38 @@
        </div>
 
 
+            <!-- GRUB --> 
+       <div class="group">
+          <h2 class="display-5">CRUD con Ajax y ventana Modal</h2> 
+          <img src="{{asset('images/crud-ajax.png')}}" align="center" class="img-tam">  
+                   
+            <label style="font-size: 2rem;">Ajax es una de las tecnologias mas rapida y segura en la interaccion con nuestra Base de Datos. <br>Te presentamos un CRUD de registros similar al anterior, pero esta vez enlazando ajax atraves de laravel
+            </label>      
+              <br><br>
+               <a href="http://127.0.0.1:8000/post">Ejercicio</a>         
+            
+      
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!--SEARCH-->
       	<div class="group">
        		<img src="{{asset('images/search.png')}}"   class="img-tam">
         	<h2 class="display-5" align="left">Filtra </h2>
-        	<label>Cuando tenemos demaciados registros en consulta a la Base de Datos, el filtrado resulta útil para ver únicamente los datos que deseeamos ver<br>
+        	<label>Suponiendo que tenemos tenemos demaciados registros en nuestra Base de Datos. En este caso, el <b>filtrado </b> resulta útil por ser la via mas facil y rapida de ver únicamente los datos que nos interesa<br>
           La vista que se obtiene tras aplicar un filtro contiene solo aquellos registros que incluyen los valores seleccionados, mientras que el resto de los datos permanece oculto hasta que se borra el filtro.</label><br><br>
        		<a href="{{ route('search')}}" style="padding-left:20%;">Ver ejemplo</a>
        </div>

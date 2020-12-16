@@ -1,19 +1,19 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
+<div class="container">
   <div class="col-md-12">
-    <h1>CRUD de Laravel con Ajax</h1>
+    <h1 style="margin-top: 10%;">CRUD de Laravel con Ajax</h1>
   </div>
 </div>
 
 <div class="row">
   <div class="table table-responsive">
-    <table class="table table-bordered" id="table">
+    <table class="table table-bordered" id="table" style="font-size: 2rem;">
       <tr>
         <th width="150px">ID</th>
         <th>Title</th>
         <th>Body</th>
-        <th>Img</th>
+        <th>Creado</th>
         <th class="text-center" width="150px">
           <a href="#" class="create-modal btn btn-success btn-sm">
             <i class="glyphicon glyphicon-plus"></i>
@@ -28,10 +28,11 @@
           <td>{{ $value->id}}</td>
           <td>{{ $value->title }}</td>
           <td>{{ $value->body }}</td>
-          <td style="padding: 0;"><img src="{{ $value->file }}" width="50" height="50" alt="No Img" style="border-radius: 20%;"></td>
+          <td> {{ $value->created_at}}> </td>
           <td>
             <a href="#" class="show-modal btn btn-info btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}" data-body="{{$value->body}}">
-              <i class="fa fa-eye"></i>
+         <i class="fa fa-eye"></i> 
+       <!--    <img src="{{asset('images/show.png')}}" width="15" height="18"> -->
             </a>
             <a href="#" class="edit-modal btn btn-warning btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}" data-body="{{$value->body}}">
               <i class="glyphicon glyphicon-pencil"></i>
@@ -47,6 +48,22 @@
   {{$post->links()}}
 </div>
 
+ <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-star"></span> Star
+  </button>
+
+  <button type="button" class="btn btn-default btn-sm">
+    <span class="glyphicon glyphicon-star"></span> Star
+  </button>
+
+  <button type="button" class="btn btn-default btn-xs">
+    <span class="glyphicon glyphicon-star"></span> Star
+  </button>
+
+<div class="btn-toolbar" role="toolbar">
+  <button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-star"></span> Star
+  </button>
 
 
 
@@ -107,7 +124,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"></h4>
                   </div>
-                    <div class="modal-body">
+                  <div class="modal-body">
                     <div class="form-group">
                       <label for="">ID :</label>
                       <b id="i"/>
@@ -120,7 +137,7 @@
                       <label for="">Body :</label>
                       <b id="by"/>
                     </div>
-                    </div>
+                  </div>
                     </div>
                   </div>
 </div>

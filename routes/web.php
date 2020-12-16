@@ -38,7 +38,7 @@ Route::get('/menu', function(){
 })->name('menu');
 
 Route::get('/search', function(){
-	return view('Search.Search');
+	return view('Search.index');
 })->name('search');
 
 
@@ -59,14 +59,22 @@ Route::get('/NewPost', function(){
 
 
 
-// Route::get('/post', function(){ 
-// 	return view('crud_larav-ajax.index');
-// })->name('Larav-Ajax');
+ Route::get('/post', function(){ 
+	return view('crud_larav-ajax.index');
+})->name('Larav-Ajax');
 
 	
-Route::group(['middleware' => ['web']], function() {
   Route::resource('post','PostController');
   Route::POST('addPost','PostController@addPost');
   Route::POST('editPost','PostController@editPost');
   Route::POST('deletePost','PostController@deletePost');
-});
+
+
+//Agrupar rutas que pertenecen a un controladores que estan bajo un mismo namespace ejemplo:
+  
+//Route::group(['middleware' => ['web'], function{ 
+  // Route::resource('post','PostController');
+  // Route::POST('addPost','PostController@addPost');
+  // Route::POST('editPost','PostController@editPost');
+  // Route::POST('deletePost','PostController@deletePost');
+//});

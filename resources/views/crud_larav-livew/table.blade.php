@@ -1,4 +1,4 @@
- <h2>Listado de Post</h2>
+
     @if (session('mensaje'))
         <div class="alert alert-success">             
             <small>{{ session('mensaje') }}  </small>
@@ -9,8 +9,8 @@
     <table class="table">           
         <thead class="thead-dark">          
         <tr align="center"> 
-            <th class="text-center">Title</th>
-            <th class="text-center">Body</th>
+            <th class="text-center" class="td-tit">Title</th>
+            <th class="text-center" class="td-desc">Body</th>
             <th colspan="2">&nbsp; Accion</th>
         </tr>
     </thead>

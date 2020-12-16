@@ -234,4 +234,11 @@ section {
 .form-In{ width: 100%; background-color: #eee; font-size: 1rem; padding:10px;}
 .group{border-style: inset; border-color: #c0c0c0; float: left; padding: 1%; height: auto; width: auto; margin-top:2%; margin-left:1%; text-align: justify; width: 30%;}
 .img-tam{width:80%; height:30%; }
-
+.font{ font-size: 3rem; }
+.navPers{background:   #cecdd1 ;  margin: 0;}
+.marg-comp{margin-top: 10%}
+thead{font-size: 3rem; }
+.td-desc{font-family: all; text-align: justify-all; padding-left: 3%; padding-right: 5%;}
+.td-tit{font-weight: bold;}
+.td-i{background:  #c7d1c7 ; font-weight: bold;}
+.table-borde{border:solid 1px; border-color:  #a1a0a4 }

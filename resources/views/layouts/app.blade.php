@@ -4,24 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel Crud</title>
+    <title>My's Scopes</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+    <link href="{{ asset('styles.css') }}" rel="stylesheet">
   </head>
   <body>
-<nav class="navbar navbar-default navbar-ststic-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{route('post.index')}}">CodELog</a>
+
+       <nav  class="navbar navbar-ststic-top navPers" role="navigation">  
+        <div class="navbar-header">
+           <span style="font-size: 3rem;">Larave - Livewire - AJAX & Eloquent</span> 
+        </div>
+        <div class="container">
+             <a class="nav-link font" href="{{ route('inicio')}}">Home</a>
+             <!--   <span class="glyphicon glyphicon-home"></span> -->
+        </div>
+      </nav>
+
+
+
+
+
+    <div class="" style="margin-left: 5%; margin-right:10%; ">
+       @yield('content')
     </div>
-  </div>
-</nav>
-<div class="container">
-  @yield('content')
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

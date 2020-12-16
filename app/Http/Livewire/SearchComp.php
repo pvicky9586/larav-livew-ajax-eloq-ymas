@@ -10,7 +10,7 @@ class SearchComp extends Component
 {
 	use WithPagination;
 	public $title, $body;
-	public $searchPart = '';
+	public $searchPost = '';
 
 
 
@@ -19,8 +19,8 @@ class SearchComp extends Component
 	    	return view('livewire.search-comp', [
 			'posts'=> Post::where(function($sub_query)
 			{
-				$sub_query->where('body','like', '%'.$this->searchPart.'%')
-				->orWhere('title','like', '%'.$this->searchPart.'%');
+				$sub_query->where('body','like', '%'.$this->searchPost.'%')
+				->orWhere('title','like', '%'.$this->searchPost.'%');
 				})->orderBy('id','desc')->simplepaginate(10) 
 			]);
 
