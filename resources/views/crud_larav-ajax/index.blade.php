@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
   <div class="col-md-12">
-    <h1>Simple Laravel CRUD Ajax</h1>
+    <h1>CRUD de Laravel con Ajax</h1>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
         <th width="150px">ID</th>
         <th>Title</th>
         <th>Body</th>
-        <th>Create At</th>
+        <th>Img</th>
         <th class="text-center" width="150px">
           <a href="#" class="create-modal btn btn-success btn-sm">
             <i class="glyphicon glyphicon-plus"></i>
@@ -28,7 +28,7 @@
           <td>{{ $value->id}}</td>
           <td>{{ $value->title }}</td>
           <td>{{ $value->body }}</td>
-          <td>{{ $value->created_at }}</td>
+          <td style="padding: 0;"><img src="{{ $value->file }}" width="50" height="50" alt="No Img" style="border-radius: 20%;"></td>
           <td>
             <a href="#" class="show-modal btn btn-info btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}" data-body="{{$value->body}}">
               <i class="fa fa-eye"></i>
@@ -89,9 +89,9 @@
             <button class="btn btn-warning" type="submit" id="add">
               <span class="glyphicon glyphicon-plus"></span>Save Post
             </button>
-            <button class="modal btn btn-warning" type="button" data-dismiss="modal">
-              <span class="glyphicon glyphicon-remobe"></span>Close
-            </button>
+           <button type="button" class="btn btn-warning" data-dismiss="modal">
+          <span class="glyphicon glyphicon"></span>close
+        </button>
           </div>
     </div>
   </div>
@@ -124,6 +124,10 @@
                     </div>
                   </div>
 </div>
+
+
+
+
 {{-- Modal Form Edit and Delete Post --}}
 <div id="myModal"class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -155,7 +159,7 @@
         </form>
 
 
-{{-- Form Delete Post --}}
+		{{-- Form Delete Post --}}
         <div class="deleteContent">
           Are You sure want to delete <span class="title"></span>?
           <span class="hidden id"></span>

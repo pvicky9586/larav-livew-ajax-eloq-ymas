@@ -36,25 +36,27 @@
   });
   $("#add").click(function() {
     $.ajax({
-      type: 'POST',
-      url: 'store',
+      type: 'POST', //envio mediante post
+      url: 'addPost',  //method de la ruta controller
       data: {
         '_token': $('input[name=_token]').val(),
         'title': $('input[name=title]').val(),
         'body': $('input[name=body]').val()
        },
-      success: function(data){
-        if ((data.errors)) {
+      success: function(data){ 
+        if ((data.errors)) { 
+          //si error
           $('.error').removeClass('hidden');
           $('.error').text(data.errors.title);
           $('.error').text(data.errors.body);
         } else {
+          //insert regist en table sin recargar pagina
           $('.error').remove();
           $('#table').append("<tr class='post" + data.id + "'>"+
           "<td>" + data.id + "</td>"+
           "<td>" + data.title + "</td>"+
           "<td>" + data.body + "</td>"+
-          "<td>" + data.created_at + "</td>"+
+          "<td>" + data.file + "</td>"+
           "<td><button class='show-modal btn btn-info btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='fa fa-eye'></span></button> <button class='edit-modal btn btn-warning btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='glyphicon glyphicon-pencil'></span></button> <button class='delete-modal btn btn-danger btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='glyphicon glyphicon-trash'></span></button></td>"+
           "</tr>");
         }
@@ -147,7 +149,7 @@ $('.modal-footer').on('click', '.delete', function(){
 function closeModal(){
   $('#title').val('');
   $('#body').val('');
-  $('.modal').fadeOut();
+ // $('.modal').fadeOut();
 }
 
 </script>

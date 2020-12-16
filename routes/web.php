@@ -26,12 +26,12 @@ Route::get('/', function () {
 
 
 Route::get('/count', function(){
-	return view('Count.Count');
+	return view('Count.index');
 })->name('counts');
 
-Route::get('/crub', function(){
-	return view('Crub.crub');
-})->name('crub');
+Route::get('/crud_larav-livew', function(){
+	return view('crud_larav-livew.index');
+})->name('crud_larav-livew');
 
 Route::get('/menu', function(){
 	return view('Menus.Menu');
@@ -55,14 +55,18 @@ Route::get('/NewPost', function(){
 
 
 
-Route::resource('/modal','PostCont');
+//Route::resource('/modal','PostCont');
 
 
 
+// Route::get('/post', function(){ 
+// 	return view('crud_larav-ajax.index');
+// })->name('Larav-Ajax');
 
+	
 Route::group(['middleware' => ['web']], function() {
   Route::resource('post','PostController');
-  Route::POST('store','PostController@store');
+  Route::POST('addPost','PostController@addPost');
   Route::POST('editPost','PostController@editPost');
   Route::POST('deletePost','PostController@deletePost');
 });

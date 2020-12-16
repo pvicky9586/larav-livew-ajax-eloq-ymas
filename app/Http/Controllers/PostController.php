@@ -14,11 +14,11 @@ class PostController extends Controller
     public function index(){
       $post= Post::orderBy('id','DESC')->paginate(10);
      // $post = Post::paginate(10);
-      return view('post.index',compact('post'));
+      return view('crud_larav-ajax.index',compact('post'));
     }
 
 
-    public function store(Request $request){
+    public function addPost(Request $request){
     //   $rules = array(
     //     'title' => 'required',
     //     'body' => 'required',
@@ -32,8 +32,8 @@ class PostController extends Controller
       $post->title = $request->title;
       $post->body = $request->body;
       $post->save();
-      return back();
-      //return response()->json($post);
+      //return back();
+      return response()->json($post);
     //}
 }
 

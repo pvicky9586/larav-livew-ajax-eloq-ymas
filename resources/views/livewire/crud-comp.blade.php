@@ -2,11 +2,11 @@
 	<h1 align="center">CRUB</h1>
 	<div class="tool-liv" style="display:flex;margin-top:2%;">
 		  <div style="margin-right:3%;" class="">
-			@include("Crub.$view") 
+			@include("crud_larav-livew.$view") 
 		</div>
 		
 	   <div class="">
-			@include('Crub.crub_list')  
+			@include('crud_larav-livew.table')  
 	   </div>	
 	</div>
 </div>

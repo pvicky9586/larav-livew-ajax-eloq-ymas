@@ -29,7 +29,7 @@
          			<li>Registrar</li>
          			<li>Actualizar</li> 
               <br>
-               <a href="{{ route('crub')}}">Ejercicio</a>   			
+               <a href="{{ route('crud_larav-livew')}}">Ejercicio</a>   			
          		</div>
           </details>
        </div>
@@ -83,6 +83,7 @@
          <label>Publicaciones</label>
                      <a href="{{ route('posts') }}">Post</a>
      </div>
+     <div><a href="">crud de laravel y ajax</a></div>
 	</div>
 
 
