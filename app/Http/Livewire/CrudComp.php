@@ -10,7 +10,7 @@ class CrudComp extends Component
 {
 	use WithPagination;
 	public $view = 'create';
-	public $post_id, $title, $body;
+	public $post_id, $title, $body, $status;
 	public $searchPart = '';
 
 

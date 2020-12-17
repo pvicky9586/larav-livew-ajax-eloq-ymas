@@ -4,65 +4,51 @@
 
 
    <div  align="center">
-     
-        	<div align="content" class= "container" style="display: flex; margin-top: 3%;">
-        		<div>
-        			<img src="{{asset('images/laravel-livewire.jpg')}}" width="500" height="250">
-        		</div>
-        		<div>
-        			<img src="{{asset('images/eloquent.jpg')}}" width="400" height="250">
-        		</div>
-        	</div>
-
+        <img src="{{asset('images/Larav-Lavew-Ajax-Eloq.png')}}">
   </div>
-<div style="display: flex;">  
 
-        <!-- GRUB --> 
+<div style="display: flex;">
+          <img src="{{asset('images/crud.png')}}" class="crud">
+
+  <div style="display: inline-block;">  
+        <div class="group">
+          <h2 class="display-3">Just Laravel</h2> 
+            <label style="font-size: 2rem;">Cuando necesitamos insertar, editar e incluso hasta eliminar registros de nuestra Base de Datos; no es necesario, entonces conocer y dominar la herramienta que nos podria facilitar este trabajo. orientados siempre a la facilidad del cliente</label>
+            <h1 align="center" class="text-success">Un medio rapido, practico y seguro</h1><br>
+            <div>
+              <a href="{{ url('/posts')}}">Crud con Laravel</a> 
+            </div>
+        </div> 
+     
+
        <div class="group">
-          <h2 class="display-5">CRUD  con Livewire</h2> 
-       		<img src="{{asset('images/crub.png')}}" align="center" class="img-tam">  
-       		         
-       	  	<label style="font-size: 2rem;">Cuando necesitamos insertar, editar; registros en una Base de Datos. Es alli entonces donde requerimos dominar la mejor herramienta que nos podria facilitar este trabajo. orientada siempre a la facilidad del cliente (rapido, practico y seguro)
-            </label>
-          <details>
-             <summary>Crud -- incluye:</summary>
-         		<div style="padding-left: 8%;">
-         			<li>listar</li>
-         			<li>Registrar</li>
-         			<li>Actualizar</li> 
-              <li>Eliminar</li> 
-              <br>
-               <a href="{{ route('crud_larav-livew')}}">Ejercicio</a>   			
-         		</div>
-          </details>
+          <h2 class="display-3">Larave & Livewire</h2> 
+       	 	<label style="font-size: 2rem;">Livewire llega para sorpendernos! en un gigantezco ahorro de tiempo y esfuerzo al consumir una Api <br> Sin mas preambulo! he creado una sencilla, completa y rapida Api. con los mismo datos del crub anterior, pero sin recargar la pagina
+          </label>
+          <div align="center">
+            <a href="{{ route('crud_larav-livew')}}">Crud Livewire en laravel</a>   
+          </div>	
        </div>
 
 
-            <!-- GRUB --> 
        <div class="group">
-          <h2 class="display-5">CRUD con Ajax y ventana Modal</h2> 
-          <img src="{{asset('images/crud-ajax.png')}}" align="center" class="img-tam">  
-                   
-            <label style="font-size: 2rem;">Ajax es una de las tecnologias mas rapida y segura en la interaccion con nuestra Base de Datos. <br>Te presentamos un CRUD de registros similar al anterior, pero esta vez enlazando ajax atraves de laravel
-            </label>      
-              <br><br>
-               <a href="http://127.0.0.1:8000/post">Ejercicio</a>         
-            
-      
-       </div>
+          <h2 class="display-3">Laravel & Ajax y Ventana Modal</h2>
+          <label style="font-size: 2rem;">Ajax es una de las tecnologias mas rapida y segura en la interaccion con nuestra Base de Datos. <br>Te presentamos un CRUD de registros similar al anterior, pero esta vez enlazando ajax atraves de laravel y seguimos sumando + segurida y dinamismo(al no recargar la pagina)
+          </label>      
+          <br><br>
+            <a href="{{ url('/post')}}">Crud con Ajax</a>   
+        </div>
+  </div>
 
+</div>
 
+<div style="display: flex;">
+    <!--Public Post -->
 
-
-
-
-
-
-
-
-
-
-
+    <div  class="group">
+      <label>Publicaciones</label>
+      <a href="{{ route('Public') }}">Post</a>
+     </div>
 
 
       <!--SEARCH-->
@@ -84,19 +70,15 @@
     			Imaginemos que nuestra tabla "usuarios" contiene muchos registros y muchos usuarios han hecho publicaciones, a su vez esas publicaciones tienen comentarios.
     			Para averiguar la cantidad sin necesidad de contarlos manualmente usamos la función "count()":</label><br>
        		<a href="{{ route('counts')}}" style="padding-left:20%;">Ver ejemplo</a>
-       </div>
-</div>
+    </div>
 
 
-
-
-
-<div style="display: flex;">
   <!--MENU -->
     <div  class="group">
 	      <img src="{{asset('images/menu.jpg')}}" class="img-tam">
 	       <label>Del diseño atractivo, organizado y bien estructurado dependera la imagen que de a tu pagina web. Por ende es imsporte que te organices y le heche ganas. <br>
 	       Te traigo un ejemplo de un menu de tipo responsible y desegable. maximiza y minimizas el navegar para que le puedas</label>
+         <div align="center">
          <details>
          <summary>Menus:</summary>
           <li>Menu normal</li>
@@ -107,14 +89,14 @@
 	         <a href="{{ route('menu') }}" style="padding-left:20%;">Ejemplo</a>
 
          </details>
+         </div>
 	   </div>
 
-     <div  class="group">
-         <label>Publicaciones</label>
-                     <a href="{{ route('posts') }}">Post</a>
-     </div>
-     <div><a href="">crud de laravel y ajax</a></div>
-	</div>
+</div>
+
+     
+
+
 
 
 

@@ -1,16 +1,20 @@
 
+   
+
     @if (session('mensaje'))
         <div class="alert alert-success">             
             <small>{{ session('mensaje') }}  </small>
         </div>
     @endif
- <!--  <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >  -->          
-                    
-    <table class="table">           
+<div  >
+  <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >           
+   
+                      
+    <table class="table" >           
         <thead class="thead-dark">          
         <tr align="center"> 
-            <th class="text-center" class="td-tit">Title</th>
-            <th class="text-center" class="td-desc">Body</th>
+            <th class="text-center" >Title</th>
+            <th class="text-center">Body</th>
             <th colspan="2">&nbsp; Accion</th>
         </tr>
     </thead>
@@ -18,8 +22,8 @@
   
         @foreach ($posts as $post)
             <tr>
-                <td>{{ $post->title }}</td>
-                <td class="text-center">{{ $post->body }}</td>
+                <td class="display-3">{{ $post->title }}</td>
+                <td class="">{{ $post->body }}</td>
                 <td>
                     <button class="btn btn-success" wire:click="edit({{ $post->id }})">Editar
                     </button>
@@ -34,5 +38,9 @@
     </tbody>
 </table>
     <div style="color:blue;">
-       <!--  {{ $posts->links() }} -->
+        {{ $posts->links() }}
     </div>
+
+
+
+</div>

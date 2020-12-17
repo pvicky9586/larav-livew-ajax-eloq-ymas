@@ -29,9 +29,7 @@ Route::get('/count', function(){
 	return view('Count.index');
 })->name('counts');
 
-Route::get('/crud_larav-livew', function(){
-	return view('crud_larav-livew.index');
-})->name('crud_larav-livew');
+
 
 Route::get('/menu', function(){
 	return view('Menus.Menu');
@@ -42,9 +40,9 @@ Route::get('/search', function(){
 })->name('search');
 
 
-Route::get('/posts', function(){
+Route::get('/Public', function(){
 	return view('PublicPost.index');
-})->name('posts');
+})->name('Public');
 
 
 
@@ -59,11 +57,22 @@ Route::get('/NewPost', function(){
 
 
 
- Route::get('/post', function(){ 
-	return view('crud_larav-ajax.index');
-})->name('Larav-Ajax');
 
-	
+//CRUD solo laravel view crud_larav
+Route::resource('posts', PostLaravController::class);
+
+//CRUD view view crud_larav-livew
+Route::get('/crud_larav-livew', function(){
+  return view('crud_larav-livew.index');
+})->name('crud_larav-livew');
+
+
+
+//  Route::get('/post', function(){ 
+// 	return view('crud_larav-ajax.index');
+// })->name('Larav-Ajax');
+
+//CRUD view crud-larav-ajax
   Route::resource('post','PostController');
   Route::POST('addPost','PostController@addPost');
   Route::POST('editPost','PostController@editPost');

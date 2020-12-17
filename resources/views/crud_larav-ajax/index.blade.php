@@ -9,6 +9,7 @@
 <div class="row">
   <div class="table table-responsive">
     <table class="table table-bordered" id="table" style="font-size: 2rem;">
+      <thead class="thead-dark">
       <tr>
         <th width="150px">ID</th>
         <th>Title</th>
@@ -22,6 +23,7 @@
          
         </th>
       </tr>
+      </thead>
       {{ csrf_field() }}
       @foreach ($post as $value)
         <tr class="post{{$value->id}}">

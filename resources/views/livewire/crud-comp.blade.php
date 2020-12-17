@@ -1,11 +1,14 @@
-<div class="container marg-comp" align="center">
-	<h1 align="center">CRUD</h1>
-	<div class="tool-liv" style="display:flex;margin-top:2%;">
-		  <div style="margin-right:3%;" class="">
-			@include("crud_larav-livew.$view") 
+<div class=" " align="center">
+			<h1 align="center">CRUD Just Laravel</h1>
+	<div class="" style="display:flex; margin-top:10%;">
+		<div style="width: 40%; margin-top: 10%;">
+		
+			@include('crud_larav-livew.form')<br>
+		 	@include("crud_larav-livew.$view") 
+
 		</div>
 		
-	   <div class="">
+	   <div style="width:60%;">	   		
 			@include('crud_larav-livew.table')  
 	   </div>	
 	</div>
