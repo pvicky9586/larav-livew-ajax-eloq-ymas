@@ -46,6 +46,21 @@ Route::get('/Public', function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+Route::view('users','livewire.home');
+
+
+
 Route::get('/NewPost', function(){
 	return view('PublicPost.create');
 })->name('NewPost');

@@ -36,7 +36,9 @@ thead{font-size: 2.5rem; }
  width: 1px;
 }
 
-
+.img-post{width: 50; height: 10; }
+.search{padding: 2%; color: #B0DFDC; width: 20%; }
+.public-Ah{background: blue; color: #fff; padding: 2%; font-weight: bold; font-size: 2rem;}
 
 
 

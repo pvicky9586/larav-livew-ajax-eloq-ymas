@@ -14,7 +14,8 @@ class Post extends Model
     	'body',
     	'category_id',
     	'user_id',
-    	'file'
+    	'file',
+        'created_at',
     ];
 
     public function comments()

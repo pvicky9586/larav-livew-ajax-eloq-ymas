@@ -38,7 +38,7 @@
              <!--   <span class="glyphicon glyphicon-home"></span> -->
         </div>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-c<div align="center">ontrol mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-c<div align="center" control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0 text-warning" type="submit">Search</button>
         </form>
       </nav>
@@ -53,7 +53,23 @@
 
        @livewireScripts
 
-    
+
+
+      <script type="text/javascript">
+        //cierre de modal  con id="exampleModal"
+        window.livewire.on('userStore', () => {
+            $('#exampleModal').modal('hide');
+        });
+      </script>
+
+      <script type="text/javascript">
+        //cierre de modal  con id="exampleModal"
+        window.livewire.on('postStore', () => {
+            $('#exampleModal').modal('hide');
+        });
+      </script>
+
+
 
   <!-- JS jquery, poppoer y bootstrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
