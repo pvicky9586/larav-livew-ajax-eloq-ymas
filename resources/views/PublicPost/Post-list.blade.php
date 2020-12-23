@@ -7,10 +7,31 @@
 	        </div>
 	    @endif
 <div class="container">
+
+<div  style="font-size:1.5rem; padding-top:1%;">Categoria: 
+ 	<select wire:model="cat_id">
+ 		<option value="">Seleccione</option>
+ 		@foreach($cats as $cat)
+ 		<option value="{{$cat->id}}">{{$cat->name}}</option>
+ 		@endforeach
+ 	</select>
+ </div>
+ <div  style="font-size:1.5rem; padding-top:1%;">Etiquetas: 
+ 	@foreach($tags as $tag)
+ 		<input type="checkbox" wire:model="tag_id" value="{{$cat->id}}">
+ 	@endforeach
+ 	<!-- hay una relacion de muchos a muchos entre post, categorias y etiq.... 
+ 	* un post tiene una sola categoria, pero muchos post pertenecen a una misma categoria
+ 	* un post tiene o puede tener muchas etiquetas y una etiqueta tiene muchos post
+ 	-->
+ 	
+
+
 	<div>	
 		 <input type="text" class="search-input"   wire:model="searchPart"  placeholder="Buscar Publicación" class="search">
 		 <img src="{{asset('images/search.jpeg')}}" >
-	</div>  
+	</div>
+  
 	<div style="margin:1%; " align="right">
 		@include('PublicPost.create')
 	</div>
@@ -57,9 +78,15 @@
 	<hr style="color:#c0c0c0; background-color: gray; width:85%;"/>   
 	        
 	@endforeach
+	<div>{{ $posts->links() }}</div>
 </div>
 
-<!-- <div>{{ $posts->links() }}</div> -->
+
+<div>Categorias -> {{$cats}}</div>
+<div>Etiquetas -> {{$tags}}</div>
+
+
+
 	   
 
 	

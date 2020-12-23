@@ -14,6 +14,13 @@ class ProfilesSeeder extends Seeder
      */
     public function run()
     {
+        
+        // $Array = range(0,6);
+        // foreach ($Array as $value) {
+        //    DB::table('profiles')->insert((
+        //     'name' => 'Doctor', 'abrev' => 'Dor(ra)'
+        //  )]} 
+
 
     	//DB::table('profiles')->truncate();
 
@@ -42,6 +49,8 @@ class ProfilesSeeder extends Seeder
        		['name' => 'Otra', 'abrev' => ''],
        	);
         
+
+
        
     }
 }

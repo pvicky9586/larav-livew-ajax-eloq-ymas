@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\Profile;
 
 
 
@@ -48,6 +51,15 @@ Route::get('/Public', function(){
 	return view('PublicPost.index');
 })->name('Public');
 
+
+
+
+Route::get('/cons', function(){
+  $prof = Category::all();
+  $tag = Tag::all();
+  $prof = Profile::all();
+  return $prof;
+});
 
 
 

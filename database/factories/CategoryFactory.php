@@ -21,9 +21,10 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->unique()->text(5);
+        //$title = $this->faker->unique()->text(5);
         return [
-            'name' => Str::camel($title),
+            //'name' => Str::camel($title),
+            'name' => $this->faker->unique()->text(10),
             'detall' => $this->faker->paragraph
            ];
 
