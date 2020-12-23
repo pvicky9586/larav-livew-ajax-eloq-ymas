@@ -50,26 +50,10 @@
   {{$post->links()}}
 </div>
 
- <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-star"></span> Star
-  </button>
-
-  <button type="button" class="btn btn-default btn-sm">
-    <span class="glyphicon glyphicon-star"></span> Star
-  </button>
-
-  <button type="button" class="btn btn-default btn-xs">
-    <span class="glyphicon glyphicon-star"></span> Star
-  </button>
-
-<div class="btn-toolbar" role="toolbar">
-  <button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star"></span> Star
-  </button>
 
 
 
-
+<!--Modals-->
 
 
 {{-- Modal Form Create Post --}}

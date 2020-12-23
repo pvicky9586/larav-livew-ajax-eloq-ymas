@@ -2,11 +2,13 @@
 @section('content')
     
     
-<div class="toll">
-	 <h2>Filtrado de Post</h2>
+<div style="margin-top: 5%;">
+	 <h1>Filtrado</h1>
+	 <small> registros de Post</small>
+ </div>    
     @livewire('search-comp')
         
-</div>     
+    
 
 
 @endsection

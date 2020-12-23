@@ -17,12 +17,14 @@ class PostPublicComp extends Component
 	use WithFileUploads;
 	use WithPagination;
 
+	protected $paginationTheme = 'bootstrap';
+
 	public $title, $body, $file, $status, $cat_id='', $tag_id='';
 	public $factory = 0;
 	public $File='';
 	public $post, $mensaje;
 	public $updateMode = false;
-	public $searchPart = '';
+	public $search = '';
 	public $cats, $tags;
 
 	function mount(){
@@ -32,17 +34,32 @@ class PostPublicComp extends Component
 		$tags=Tag::all();
 			$this->tags=$tags;		
 	}
+	public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
-    
+    //Usado una vista de paginación personalizada
+    // public function paginationView()
+    // {
+    //     return 'custom-pagination-links-view';
+    // }
+    //en view   {{ $posts->links('custom-pagination-links-view') }}
+
+
+
+
+
+
 
     public function render()
     {		
     	  return view('livewire.post-public-comp',[
 			'posts'=> Post::where(function($sub_query)
 			{
-				$sub_query->where('body','like', '%'.$this->searchPart.'%')
-				->orWhere('title','like', '%'.$this->searchPart.'%');
-				})->where('status','=',1)->orderBy('id','desc')->simplepaginate(5) 
+				$sub_query->where('body','like', '%'.$this->search.'%')
+				->orWhere('title','like', '%'.$this->search.'%');
+				})->where('status','=',1)->orderBy('id','desc')->paginate(5) 
 			]);
     }
 

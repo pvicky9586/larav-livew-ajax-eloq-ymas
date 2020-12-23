@@ -10,20 +10,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <link href="{{ asset('styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
   </head>
   <body>
 
-       <nav  class="navbar navbar-ststic-top navPers" role="navigation">  
+       <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
         <div class="navbar-header">
-           <span style="font-size: 3rem;">Larave - Livewire - AJAX & Eloquent</span> 
+           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-warning">
+              Laravel - Livewire - AJAX & Eloquent
+            </h2>
+           
         </div>
         <div class="container">
-             <a class="nav-link font" href="{{ route('inicio')}}">Home</a>
+             <a class="nav-link font text-warning" href="{{ route('inicio')}}">Home</a>
              <!--   <span class="glyphicon glyphicon-home"></span> -->
         </div>
-      </nav>
+    </nav>
 
+
+
+
+       <!-- <nav class="navbar-ststic-top"> 
+           <span style="font-size: 3rem;">Larave - Livewire - AJAX & Eloquent</span> &nbsp;&nbsp;        
+              <span class="glyphicon glyphicon-home">
+                <a class="" href="{{ route('inicio')}}">Home</a>
+             </span>
+       </nav>
+ -->
+   
 
 
 

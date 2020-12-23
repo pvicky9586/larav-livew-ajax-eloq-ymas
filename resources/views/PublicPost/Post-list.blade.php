@@ -18,7 +18,7 @@
  </div>
  <div  style="font-size:1.5rem; padding-top:1%;">Etiquetas: 
  	@foreach($tags as $tag)
- 		<input type="checkbox" wire:model="tag_id" value="{{$cat->id}}">
+ 		<input type="checkbox" wire:model="tag_id" value="{{$tag->id}}">
  	@endforeach
  	<!-- hay una relacion de muchos a muchos entre post, categorias y etiq.... 
  	* un post tiene una sola categoria, pero muchos post pertenecen a una misma categoria
@@ -28,7 +28,7 @@
 
 
 	<div>	
-		 <input type="text" class="search-input"   wire:model="searchPart"  placeholder="Buscar Publicación" class="search">
+		 <input type="text" class="search-input"   wire:model="search"  placeholder="Buscar Publicación" class="search">
 		 <img src="{{asset('images/search.jpeg')}}" >
 	</div>
   
@@ -78,12 +78,9 @@
 	<hr style="color:#c0c0c0; background-color: gray; width:85%;"/>   
 	        
 	@endforeach
-	<div>{{ $posts->links() }}</div>
+	<div> {{ $posts->links() }}</div>
 </div>
 
-
-<div>Categorias -> {{$cats}}</div>
-<div>Etiquetas -> {{$tags}}</div>
 
 
 

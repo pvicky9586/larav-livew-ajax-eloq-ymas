@@ -9,9 +9,11 @@ use App\Models\Post;
 class CrudComp extends Component
 {
 	use WithPagination;
+	protected $paginationTheme = 'bootstrap';
+
 	public $view = 'create';
 	public $post_id, $title, $body, $status;
-	public $searchPart = '';
+	public $search = '';
 
 
 
@@ -20,9 +22,9 @@ class CrudComp extends Component
 	    	return view('livewire.crud-comp', [
 			'posts'=> Post::where(function($sub_query)
 			{
-				$sub_query->where('body','like', '%'.$this->searchPart.'%')
-				->orWhere('title','like', '%'.$this->searchPart.'%');
-				})->orderBy('id','desc')->simplepaginate(10) 
+				$sub_query->where('body','like', '%'.$this->search.'%')
+				->orWhere('title','like', '%'.$this->search.'%');
+				})->orderBy('id','desc')->paginate(10) 
 			]);
 
     }
