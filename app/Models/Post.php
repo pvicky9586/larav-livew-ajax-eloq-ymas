@@ -15,6 +15,8 @@ class Post extends Model
     	'category_id',
     	'user_id',
     	'file',
+        'status',
+        'factory',
         'created_at',
     ];
 
@@ -22,5 +24,7 @@ class Post extends Model
     {
            return $this->hasMany(Comment::class);
     }
+
+   // $count = Post::where('status', '=', 1)->count();
 
 }

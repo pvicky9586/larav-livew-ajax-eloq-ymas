@@ -3,7 +3,6 @@
 
 namespace App\Http\Livewire;
 
-
 use Livewire\Component;
 
 use App\Models\User;
@@ -45,21 +44,17 @@ class Users extends Component
         $validatedDate = $this->validate([
 
             'name' => 'required',
-
             'email' => 'required|email',
+            // 'password' => 'required|min:5|confirmed',
 
         ]);
 
 
         User::create($validatedDate);
-
-
-        session()->flash('message', 'Users Created Successfully.');
+        session()->flash('message', 'Usuario creado satisfactoriamente.');
 
 
         $this->resetInputFields();
-
-
         $this->emit('userStore'); // Close model to using to jquery
 
 
@@ -77,7 +72,6 @@ class Users extends Component
         $this->user_id = $id;
 
         $this->name = $user->name;
-
         $this->email = $user->email;
 
         
@@ -90,7 +84,6 @@ class Users extends Component
     {
 
         $this->updateMode = false;
-
         $this->resetInputFields();
 
 
@@ -105,8 +98,8 @@ class Users extends Component
         $validatedDate = $this->validate([
 
             'name' => 'required',
-
             'email' => 'required|email',
+            //'password' => 'required|min:5',
 
         ]);
 
@@ -125,8 +118,7 @@ class Users extends Component
 
             $this->updateMode = false;
 
-            session()->flash('message', 'Users Updated Successfully.');
-
+            session()->flash('message', 'User actualizado con exito.');
             $this->resetInputFields();
 
 

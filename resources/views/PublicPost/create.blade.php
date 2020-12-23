@@ -14,7 +14,7 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel">Aññadir Publicacion</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Añadir Publicacion</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -26,7 +26,7 @@
 
            <div class="modal-body">
 
-                <form>
+                <form enctype="multipart/form-data">
 
                     <div class="form-group">
 
@@ -40,27 +40,31 @@
 
                     <div class="form-group">
 
-                        <label for="exampleFormControlInput2">Description</label>
+                        <label>Description</label>
 
-                        <input type="body" class="form-control" id="exampleFormControlInput2" wire:model="body" placeholder="Enter body">
+                        <input type="text" class="form-control" id="exampleFormControlInput2" wire:model="body" placeholder="Enter body">
 
                         @error('body') <span class="text-danger error">{{ $message }}</span>@enderror
 
                     </div>
 
-                      <div class="form-group">
+                    <div class="form-group">
 
-                        <label for="exampleFormControlInput2">Imagen</label>
+                        <label>Imagen</label>
 
-                        <input type="file" class="form-control" id="exampleFormControlInput2" wire:model="file" placeholder="Enter body">
-
-                        @error('file') <span class="text-danger error">{{ $message }}</span>@enderror
+                        <input type="file" wire:model="file"  accept="image/*">
+                        @error('file') 
+                            <span class="text-danger error">{{ $message }}</span>
+                        @enderror
+                          <H1>name: {{$file}}</H1>
 
                     </div>
-
-
+  
+                    Publicar
+                    <input type="radio" wire:model="status" value="1" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">Si
+                    <input type="radio" wire:model="status" value="0">No
                 </form>
-
+               
             </div>
 
             <div class="modal-footer">

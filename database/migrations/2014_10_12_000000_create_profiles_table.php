@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('abrev')->nullable;
+            $table->string('abrev')->nullable();
             $table->timestamps();
         });
     }

@@ -35,6 +35,10 @@ Route::get('/menu', function(){
 	return view('Menus.Menu');
 })->name('menu');
 
+
+
+
+
 Route::get('/search', function(){
 	return view('Search.index');
 })->name('search');
@@ -57,7 +61,7 @@ Route::get('/Public', function(){
 
 
 
-Route::view('users','livewire.home');
+Route::view('users','crud_larav-livew.crud-modal.home');
 
 
 
@@ -76,7 +80,7 @@ Route::get('/NewPost', function(){
 //CRUD solo laravel view crud_larav
 Route::resource('posts', PostLaravController::class);
 
-//CRUD view view crud_larav-livew
+//CRUD livewire view larav-livew
 Route::get('/crud_larav-livew', function(){
   return view('crud_larav-livew.index');
 })->name('crud_larav-livew');
@@ -94,8 +98,7 @@ Route::get('/crud_larav-livew', function(){
   Route::POST('deletePost','PostController@deletePost');
 
 
-//Agrupar rutas que pertenecen a un controladores que estan bajo un mismo namespace ejemplo:
-  
+//Agrupar rutas que pertenecen a un controladores que estan bajo un mismo namespace ejemplo:  
 //Route::group(['middleware' => ['web'], function{ 
   // Route::resource('post','PostController');
   // Route::POST('addPost','PostController@addPost');

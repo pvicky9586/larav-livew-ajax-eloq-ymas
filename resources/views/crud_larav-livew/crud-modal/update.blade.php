@@ -8,7 +8,7 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Registro</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -36,7 +36,7 @@
 
                     <div class="form-group">
 
-                        <label for="exampleFormControlInput2">Email address</label>
+                        <label for="exampleFormControlInput2">Email</label>
 
                         <input type="email" class="form-control" wire:model="email" id="exampleFormControlInput2" placeholder="Enter Email">
 

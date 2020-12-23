@@ -30,8 +30,9 @@ class CreatePostsTable extends Migration
             ->onDelete('set null');
 
 
-            $table->string('file')->nullable;
-            $table->string('status')->nullable;
+            $table->string('file')->nullable();
+            $table->integer('status');
+            $table->integer('factory'); // coluna para identificar post public y post factory
             $table->timestamps();
 
 

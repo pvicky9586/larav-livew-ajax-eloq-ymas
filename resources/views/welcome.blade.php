@@ -27,7 +27,7 @@
           </label>
           <div>
             <a href="{{ route('crud_larav-livew')}}">Crud Livewire en laravel</a>  &nbsp;&nbsp;&nbsp;
-            <a href="{{ url('users')}}">Utilizando ventana Modal y model User</a>  
+            <a href="{{ url('users')}}">Utilizando ventana Modal/Model User</a>  
 
           </div>	
        </div>
@@ -42,21 +42,29 @@
         </div>
   </div>
 </div>
+
+
+
   <!--Public Post -->
   <div  class="group">
       <h2 class="display-3">Publicaciones</h2>
       <a href="{{ route('Public') }}">Publicar un Post</a>
   </div>
 
+
+
+
+
+
 <div style="display: flex;">
     <!--SEARCH-->
       	<div class="group" style="height: 100%;">
        		<img src="{{asset('images/search.png')}}"   class="img-tam">
-        	<h2 class="display-5" align="left">Filtra </h2>
-        	<label>Suponiendo que tenemos tenemos demaciados registros en nuestra Base de Datos. En este caso, el <b>filtrado </b> resulta útil por ser la via mas facil y rapida de ver únicamente los datos que nos interesa
+        	<h2 class="display-4">Filtra </h2>
+        	Suponemo que tenemos demaciados registros en nuestra Base de Datos. En este caso, ¡el <b>filtrado </b> resulta útil por ser la via mas facil y rapida de ver únicamente los datos que nos interesa!
             <details>
-              <summary>Continua...</summary>
-                La vista que se obtiene tras aplicar un filtro contiene solo aquellos registros que incluyen los valores seleccionados, mientras que el resto de los datos permanece oculto hasta que se borra el filtro.</label><br>
+              <summary>Continuar...</summary>
+                La vista que se obtiene tras aplicar un filtro contiene solo aquellos registros que incluyen los valores seleccionados, mientras que el resto de los datos permanecen oculto hasta que se borra el filtro.<br>
           <a href="{{ route('search')}}">Ver ejemplo</a>
             </details>
         
@@ -65,34 +73,33 @@
       
 	<!--COUNT-->
  		<div class="group">
-       		<img src="{{asset('images/count.jpg')}}"   align="container" class="img-tam">
-        	<h2 class="display-5" align="left">Contado registros</h2>
-        	<label>Existen funciones  aicadas  a nysql que nos permiten contar registros, calcular sumas, promedios, obtener valores máximos y mínimos, entre otros calculos. 
-          <div align="center">
-           <details>
-            <summary>mas..</summary>
-    			Imaginemos que nuestra tabla "usuarios" contiene muchos registros y muchos usuarios han hecho publicaciones, a su vez esas publicaciones tienen comentarios.
-    			Para averiguar la cantidad sin necesidad de contarlos manualmente usamos la función "count()":</label><br>
-       		<a href="{{ route('counts')}}">Ver ejemplo</a>
+       		<img src="{{asset('images/count.jpg')}}" class="img-tam"><br><br>
+        	<h1>Contado registros</h1>
+        	<span>Existen funciones  aplicadas  a Mysql que nos permiten contar registros, hacer calculos aritmeticos, logico y de comparacion, entre otras... 
+          </span>         
+        <details align="center">
+          <summary>Por ejemplo</summary>
+    			Imaginemos que en nuestra tabla <b><i>'usuarios'</i></b> contiene muchos registros y muchos usuarios han hecho publicaciones, a su vez esas publicaciones tienen comentarios.
+    			Para averiguar la cantidad sin necesidad de contarlos manualmente usamos la función "count()":<br>
+       		<a href="{{ route('counts')}}">ejercicio</a>
         </details>
-      </div>
     </div>
 
 
   <!--MENU -->
     <div  class="group">
-	      <img src="{{asset('images/menu.jpg')}}" class="img-tam">
-	       <label>Del diseño atractivo, organizado y bien estructurado dependera la imagen que de a tu pagina web. Por ende es imsporte que te organices y le heche ganas. <br>
-	       Te traigo un ejemplo de un menu de tipo responsible y desegable. maximiza y minimizas el navegar para que le puedas</label>
-         <div align="center">
-           <details>
-           <summary>Menus:</summary>
-            <li>Menu normal</li>
-            <li>Sub Menu</li>
+	      <img src="{{asset('images/menu.jpg')}}" class="img-tam"><br><br>
+        <h1>Menus</h1>
+	       De un diseño atractivo, organizado y bien estructurado dependera la imagen que des a tu pagina web. <b>Organizate y ponle ganas</b>, <i>porque mucho dependera de tu creatividas!</i> <br>
+         <div style="margin-left: 5%;">
+	       <details>
+           <summary>Menus</summary> <!--abrir enlaces en otra pestaña-->
+            <li>Menu normal</li> 
+            <li>Desplegable</li>
             <li>Responsive</li>
             <li>de Amburquesa</li>
-            <a href="{{ route('menu') }}" style="padding-left:20%;">Ejemplo</a>
-           </details>
+           <!--  <a href="{{ route('menu') }}" style="padding-left:20%;">Ejemplo</a> -->
+         </details>
          </div>
 	 </div>
 

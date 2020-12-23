@@ -1,8 +1,8 @@
 <div>
 
-    @include('livewire.create')
+    
 
-    @include('livewire.update')
+    @include('crud_larav-livew.crud-modal.update')
 
     @if (session()->has('message'))
 
@@ -13,14 +13,15 @@
         </div>
 
     @endif
-
+    <h1 align="center" style="margin-top:5%;">Usuarios registrasos</h1>
+    @include('crud_larav-livew.crud-modal.create')
     <table class="table table-bordered mt-5">
 
         <thead>
 
             <tr>
 
-                <th>No.</th>
+                <th>ID</th>
 
                 <th>Name</th>
 
