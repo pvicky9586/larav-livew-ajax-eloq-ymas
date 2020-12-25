@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProfilesSeeder extends Seeder
+class ProfessionTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,41 +13,32 @@ class ProfilesSeeder extends Seeder
      * @return void
      */
     public function run()
-<<<<<<< HEAD
     {
-
-    	//DB::table('profiles')->truncate();
-
-        DB::table('profiles')->insert(
+        
+        DB::table('professions')->insert(
         	['name' => 'Doctor', 'abrev' => 'Dor(ra)'],
        	);
 
-       	DB::table('profiles')->insert(
+       	DB::table('professions')->insert(
        		['name' => 'Profesor', 'abrev' => 'Prof'],
        	);
-       	DB::table('profiles')->insert(
+       	DB::table('professions')->insert(
        		['name' => 'Licenciado', 'abrev' => 'Lcdo(a)'],
        	);
-       	DB::table('profiles')->insert(
+       	DB::table('professions')->insert(
        		['name' => 'Ingeniero', 'abrev' => 'Ing'],
        	);
-       	DB::table('profiles')->insert(
+       	DB::table('professions')->insert(
        		['name' => 'Abogado', 'abrev' => 'Abg'],
        	);
 
-       	DB::table('profiles')->insert(
+       	DB::table('professions')->insert(
        		['name' => 'Contador Publico', 'abrev' => 'C.P.'],
        	);
    
-   		DB::table('profiles')->insert(
+   		DB::table('professions')->insert(
        		['name' => 'Otra', 'abrev' => ''],
        	);
         
-       
-=======
-    {       
-        
-      //       
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
     }
 }

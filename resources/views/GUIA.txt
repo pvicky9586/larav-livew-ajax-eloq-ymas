@@ -1,0 +1,3 @@
+se configuro el disk local en app/conf/filisystems.php para la carpeta public de storage 
+		storage_path('app/public'),
+

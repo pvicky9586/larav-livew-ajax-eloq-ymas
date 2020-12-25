@@ -23,30 +23,39 @@ class User extends Authenticatable
         'profile_id',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+
     protected $hidden = [
         'password',
-        'remember_token',
+       // 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
 
+<<<<<<< HEAD
            public function posts()
+=======
+        public function profession()
+        {
+            return $this->belongsTo(Profession::class);
+        }
+        
+
+        public function profile()
+        {
+            return $this->belongsTo(Profile::class);
+        }
+
+        //user tiene muchos posts (*)
+        public function posts()
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
         {
             return $this->hasMany(Post::class);
         }
+
+
 
         public function comments()
         {

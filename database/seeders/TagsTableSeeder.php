@@ -15,6 +15,10 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         \App\Models\Tag::factory()->count(10)->create();
+=======
+        \App\Models\Tag::factory()->count(50)->create();
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
     }
 }

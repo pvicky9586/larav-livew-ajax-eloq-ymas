@@ -20,18 +20,39 @@ class DatabaseSeeder extends Seeder
       	$this->truncateTables([
     		'users',
             'profiles',
+            'professions',
     		'posts',
+<<<<<<< HEAD
             'categories',
     		'tags'
     		
 
+=======
+            'comments',
+            'tags',
+            'categories'
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
     	]);
 
-	    $this->call(ProfilesSeeder::class);
+	    //$this->call(ProfilesSeeder::class);
+        $this->call(ProfessionTableSeeder::class);
+
         $this->call(UsersTableSeeder::class);
+<<<<<<< HEAD
 	    $this->call(CategoriesTableSeeder::class);
 	    $this->call(TagsTableSeeder::class);
 	    $this->call(PostsTableSeeder::class);	    
+=======
+
+        $this->call(TagsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+                
+	    $this->call(PostsTableSeeder::class);	
+
+        $this->call(CommentsTableSeeder::class);    
+       
+        
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
 
 	
     }

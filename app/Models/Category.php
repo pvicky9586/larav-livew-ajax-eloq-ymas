@@ -12,4 +12,10 @@ class Category extends Model
     	'name',
     	'body'
     ];
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
 }

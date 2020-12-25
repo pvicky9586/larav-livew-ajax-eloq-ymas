@@ -24,10 +24,18 @@ class CategoryFactory extends Factory
     {
         $title = $this->faker->sentence;
         return [
+<<<<<<< HEAD
             'name' => $title,
             'slug' => Str::camel($title),
             'body' => $this->faker->paragraph,
         ];
+=======
+            //'name' => Str::camel($title),
+            'name' => $this->faker->unique()->text(10),
+            'detall' => $this->faker->paragraph,
+            'tag_id'=>rand(1,50), //crea id aleatorios
+           ];
+>>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
 
         //Str::camel -> //quita espacio y conviente depues de palabra, la primera letra de la palabra siguiente en mayuscula
         //Str::slug ->conviente todo en minuscula y espacios a '-'
