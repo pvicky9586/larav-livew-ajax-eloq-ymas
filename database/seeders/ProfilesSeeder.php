@@ -13,44 +13,8 @@ class ProfilesSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {       
         
-        // $Array = range(0,6);
-        // foreach ($Array as $value) {
-        //    DB::table('profiles')->insert((
-        //     'name' => 'Doctor', 'abrev' => 'Dor(ra)'
-        //  )]} 
-
-
-    	//DB::table('profiles')->truncate();
-
-        DB::table('profiles')->insert(
-        	['name' => 'Doctor', 'abrev' => 'Dor(ra)'],
-       	);
-
-       	DB::table('profiles')->insert(
-       		['name' => 'Profesor', 'abrev' => 'Prof'],
-       	);
-       	DB::table('profiles')->insert(
-       		['name' => 'Licenciado', 'abrev' => 'Lcdo(a)'],
-       	);
-       	DB::table('profiles')->insert(
-       		['name' => 'Ingeniero', 'abrev' => 'Ing'],
-       	);
-       	DB::table('profiles')->insert(
-       		['name' => 'Abogado', 'abrev' => 'Abg'],
-       	);
-
-       	DB::table('profiles')->insert(
-       		['name' => 'Contador Publico', 'abrev' => 'C.P.'],
-       	);
-   
-   		DB::table('profiles')->insert(
-       		['name' => 'Otra', 'abrev' => ''],
-       	);
-        
-
-
-       
+      //       
     }
 }

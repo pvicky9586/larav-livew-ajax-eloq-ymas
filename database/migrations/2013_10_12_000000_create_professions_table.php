@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreateProfessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,10 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('professions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('detall');
-            
-            $table->unsignedBigInteger('tag_id')->nullable();
-            $table->foreign('tag_id')->references('id')->on('tags')
-            ->onDelete('set null')
-            ->onUpdate('cascade');
-
+            $table->string('abrev')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +28,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('professions');
     }
 }

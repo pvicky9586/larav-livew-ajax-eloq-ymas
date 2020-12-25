@@ -30,19 +30,7 @@
 
     <body>
 
-  <!--     <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
-        <div class="navbar-header">
-           <div class="p-3 mb-2 bg-gradient-success display-5 text-warning"> Laravel - Livewire - AJAX & Eloquent</div>
-        </div>
-        <div class="container">
-             <a class="nav-link font text-warning" href="{{ route('inicio')}}">Home</a>
-             <!--   <span class="glyphicon glyphicon-home"></span> -->
-    <!--     </div>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-c<div align="center" control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0 text-warning" type="submit">Search</button>
-        </form>
-      </nav> -->
+
 
 
 
@@ -57,7 +45,7 @@
              <a class="nav-link font text-warning" href="{{ route('inicio')}}">Home</a>
              <!--   <span class="glyphicon glyphicon-home"></span> -->
         </div>
-      </nav>
+    </nav>
 
     <div class="" style="margin-left: 10%; margin-right:10%; ">
        @yield('content')

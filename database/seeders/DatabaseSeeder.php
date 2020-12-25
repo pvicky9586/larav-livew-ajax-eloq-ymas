@@ -19,22 +19,23 @@ class DatabaseSeeder extends Seeder
       	$this->truncateTables([
     		'users',
             'profiles',
+            'professions',
     		'posts',
             'comments',
             'tags',
             'categories'
-    		
-    		
-
     	]);
 
-	    $this->call(ProfilesSeeder::class);
+	    //$this->call(ProfilesSeeder::class);
+        $this->call(ProfessionTableSeeder::class);
+
         $this->call(UsersTableSeeder::class);
 
         $this->call(TagsTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
                 
 	    $this->call(PostsTableSeeder::class);	
+
         $this->call(CommentsTableSeeder::class);    
        
         

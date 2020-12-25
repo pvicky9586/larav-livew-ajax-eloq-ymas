@@ -9,7 +9,7 @@
             </div>
                 <div class="pull-right">
                 <a  href="{{ route('posts.index') }}" title="Go back"> 
-                <img src="https://www.vippng.com/png/detail/158-1586228_iconos-png-gratis-resume-volver-icono-descarga-gratuita.png" width="100"> </a>
+                <img src="https://www.vippng.com/png/detail/158-1586228_iconos-png-gratis-resume-volver-icono-descarga-gratuita.png"> </a>
             </div>
         </div>
     </div>

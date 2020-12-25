@@ -36,7 +36,11 @@
             <tr>
                 <td  align="center" class="display-4 actions-td">{{ $post->title }}</td>
                 <td   >{{ $post->body }}</td>
-                <td class="actions-td">{{ date_format($post->created_at, 'j M Y') }}</td>
+                <td class="actions-td">
+                    @if ($post->created_at)
+                        {{ date_format($post->created_at, 'j M Y') }}
+                    @endif
+                </td>
                 <td class="actions-td">
                     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                         <a href="{{ route('posts.show', $post->id) }}">

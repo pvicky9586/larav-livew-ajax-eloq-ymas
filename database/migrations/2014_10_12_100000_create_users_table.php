@@ -23,6 +23,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
 
 
+            $table->unsignedBigInteger('profession_id')->nullable();
+            $table->foreign('profession_id')->references('id')->on('professions')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
+
             $table->unsignedBigInteger('profile_id')->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles')
             ->onDelete('set null')

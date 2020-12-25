@@ -25,7 +25,8 @@ class CategoryFactory extends Factory
         return [
             //'name' => Str::camel($title),
             'name' => $this->faker->unique()->text(10),
-            'detall' => $this->faker->paragraph
+            'detall' => $this->faker->paragraph,
+            'tag_id'=>rand(1,50), //crea id aleatorios
            ];
 
         //Str::camel -> //quita espacio y conviente depues de palabra, la primera letra de la palabra siguiente en mayuscula

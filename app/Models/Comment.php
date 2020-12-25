@@ -13,9 +13,10 @@ class Comment extends Model
     	'post_id'
     ];
 
-     public function Post()
-     {
-           return $this->hasOne(Post::class);
-     }
+    //un comentario pertenece a un poat en pasticular (N-M)
+    public function post() 
+    {
+        return $this->belongsTo(Post::class);
+    }
 
 }

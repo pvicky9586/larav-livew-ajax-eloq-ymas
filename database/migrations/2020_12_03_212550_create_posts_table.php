@@ -32,7 +32,7 @@ class CreatePostsTable extends Migration
 
             $table->string('file')->nullable();
             $table->integer('status');
-            $table->integer('factory'); // coluna para identificar post public y post factory
+            $table->integer('factory'); // columna para identificar post public y post factory
             $table->timestamps();
 
 

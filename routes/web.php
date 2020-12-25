@@ -25,9 +25,6 @@ Route::get('/menu', function(){
 })->name('menu');
 
 
-
-
-
 Route::get('/search', function(){
 	return view('Search.index');
 })->name('search');
@@ -40,54 +37,17 @@ Route::get('/Public', function(){
 
 
 
-Route::get('/cons', function(){
-  $prof = Category::all();
-  $tag = Tag::all();
-  $prof = Profile::all();
-  return $prof;
-});
 
-
-
-
-
-
-
-
-
-
-
-
-
-Route::view('users','crud_larav-livew.crud-modal.home');
-
-
-
-Route::get('/NewPost', function(){
-	return view('PublicPost.create');
-})->name('NewPost');
-
-
-
-
-//Route::resource('/modal','PostCont');
-
-
-
-
-//CRUD solo laravel view crud_larav
+//CRUD solo laravel view crud_laravel
 Route::resource('posts', PostLaravController::class);
-
 //CRUD livewire view larav-livew
 Route::get('/crud_larav-livew', function(){
   return view('crud_larav-livew.index');
 })->name('crud_larav-livew');
+//CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
+Route::view('users','crud_larav-livew.crud-modal.home');
 
 
-
-//  Route::get('/post', function(){ 
-// 	return view('crud_larav-ajax.index');
-// })->name('Larav-Ajax');
 
 //CRUD view crud-larav-ajax
   Route::resource('post','PostController');
@@ -103,3 +63,50 @@ Route::get('/crud_larav-livew', function(){
   // Route::POST('editPost','PostController@editPost');
   // Route::POST('deletePost','PostController@deletePost');
 //});
+
+
+
+
+
+
+
+
+
+
+
+//PRUEBAS
+Route::get('/cons', function(){
+  $prof = Category::all();
+  $tag = Tag::all();
+  $prof = Profile::all();
+  return $prof;
+});
+
+
+
+
+Route::get('/eloq', function(){
+  $user = User::find(1);
+  $user->comments;
+  $user->posts; //todos los post que tenga un usuario
+
+  $post=Post::find(1);
+  $post->comments;  //commentarios de un post
+  $post->user;  // a que user pertenece dicho post
+ // $post->Count('comments');
+  
+  //return $user; //retorno todos los commentario de un usuario
+  return $post;  //retorno los comentarios de un post
+});
+
+
+
+
+
+
+
+
+
+
+
+
