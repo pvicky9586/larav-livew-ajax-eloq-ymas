@@ -33,6 +33,10 @@
        </div>
 
 
+
+
+
+
        <div class="group">
           <h2 class="display-3">Laravel & Ajax y Ventana Modal</h2>
           <label style="font-size: 2rem;">Ajax es una de las tecnologias mas rapida y segura en la interaccion con nuestra Base de Datos. <br>Te presentamos un CRUD de registros similar al anterior, pero esta vez enlazando ajax atraves de laravel y seguimos sumando + segurida y dinamismo(al no recargar la pagina)
@@ -42,18 +46,12 @@
         </div>
   </div>
 </div>
-
-
-
+      
   <!--Public Post -->
   <div  class="group">
       <h2 class="display-3">Publicaciones</h2>
       <a href="{{ route('Public') }}">Publicar un Post</a>
   </div>
-
-
-
-
 
 
 <div style="display: flex;">
@@ -104,6 +102,7 @@
 	 </div>
 
 </div>
+
 
 
 

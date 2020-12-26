@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryTagTable extends Migration
+class CreateCategoryTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCategoryTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_tag', function (Blueprint $table) {
+        Schema::create('category_tags', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id')->nullable();
@@ -26,7 +26,9 @@ class CreateCategoryTagTable extends Migration
             $table->foreign('tag_id')->references('id')->on('tags')
             ->onDelete('set null')
             ->onUpdate('cascade');
+            
             $table->timestamps();
+          
         });
     }
 
@@ -37,6 +39,6 @@ class CreateCategoryTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_tag');
+        Schema::dropIfExists('category_tags');
     }
 }

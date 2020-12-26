@@ -82,21 +82,24 @@ Route::get('/cons', function(){
   return $prof;
 });
 
-
-
+// consultas Eloquent
 
 Route::get('/eloq', function(){
-  $user = User::find(1);
-  $user->comments;
-  $user->posts; //todos los post que tenga un usuario
+  // $user = User::find(1);
+  // $user->comments;
+  // $user->posts; //todos los post que tenga un usuario
 
   $post=Post::find(1);
-  $post->comments;  //commentarios de un post
+ // $post->cat;  //commentarios de un post
   $post->user;  // a que user pertenece dicho post
+  $post->category;
  // $post->Count('comments');
   
   //return $user; //retorno todos los commentario de un usuario
-  return $post;  //retorno los comentarios de un post
+ // return $post;  //retorno los comentarios de un post
+
+
+ return $post;
 });
 
 

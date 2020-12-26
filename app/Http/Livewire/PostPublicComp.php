@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Livewire;
 
 use Livewire\Component;
@@ -11,6 +12,7 @@ use App\Models\Tag;
 
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class PostPublicComp extends Component
 {
@@ -19,37 +21,28 @@ class PostPublicComp extends Component
 
 	protected $paginationTheme = 'bootstrap';
 
-	public $title, $body, $file, $status, $cat_id='', $tag_id='';
+	public $title, $body, $file, $status, $category_id;
+	public $categorys, $tags, $tag_id=[];
 	public $factory = 0;
 	public $File='';
 	public $post, $mensaje;
 	public $updateMode = false;
 	public $search = '';
-	public $cats, $tags;
+	
 
 	function mount(){
-		$cats=Category::all();
-			$this->cats=$cats;
+		$categorys=Category::all();
+			$this->categorys=$categorys;
 
 		$tags=Tag::all();
-			$this->tags=$tags;		
+			$this->tags=$tags;
 	}
+
+
 	public function updatingSearch()
     {
         $this->resetPage();
     }
-
-    //Usado una vista de paginación personalizada
-    // public function paginationView()
-    // {
-    //     return 'custom-pagination-links-view';
-    // }
-    //en view   {{ $posts->links('custom-pagination-links-view') }}
-
-
-
-
-
 
 
     public function render()
@@ -65,12 +58,12 @@ class PostPublicComp extends Component
 
   public function store() {
         $validatedDate = $this->validate([
-              // 'title' => 'required',
-              // 'body' => 'required',
+              'title' => 'required',
+              'categoty' => 'required',
+              'tag_id'=>'required',
+              'body' => 'required',
               'file' => 'required|image|max:1024',
         ]);
-
-
         // $imgUrl = url($this->file); 
         // $imgExt = $this->file->getClientOriginalExtension();
         // $ImgnameExt = md5($this->file . microtime()).'.'.$this->file->extension();
@@ -79,25 +72,33 @@ class PostPublicComp extends Component
         $File = $this->file->store('ImgPost'); //upload nombre aleatorio, evida reg repetidos
 
 
-        // $this->file->storeAs('posts', $this->file,'public'); //upload storesAs tres params (directory, nombre-tmp-file, disk(definido in app/conf/filesystems.php))
+        // $this->file->storeAs('posts', $this->file,'public'); 
+        //upload con 'storesAs' tres params (directory, nombre-tmp-file, disk(definido in app/conf/filesystems.php))
 
         $save = Post::create([
 			 'title' => $this->title,
 			 'body' => $this->body,
+			 'category_id'=>$this->category_id,
 			 'file' => $File,
 			 'status' => $this->status,
 			 'factory' => $this->factory,
 		]);
-		   
-       
 
+		$Ntag= Count($this->tag_id);
+        for($i=0; $i<$Ntag; $i++){
+			$save->tags()->create([
+				'post_id'=>$save->id,
+				'tag_id' => $this->tag_id[$i],
+			]);
+		}
 		$this->default();
 		$this->emit('postStore'); // Close model to using to jquery
-		return back()->with('mensaje','Datos Registrados');	  		
+		return back()->with('mensaje','Datos Registrados');
+			  		
 	}
 
 
-
+	
 
 
 
@@ -105,6 +106,9 @@ class PostPublicComp extends Component
 	public function default(){
 		$this->title = '';
 		$this->body = '';
+		$this->file = '';
+		$this->category_id = '';
+		$this->status = '';
 		 
 	}
 

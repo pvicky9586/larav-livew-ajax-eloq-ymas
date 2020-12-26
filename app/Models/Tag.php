@@ -12,4 +12,10 @@ class Tag extends Model
    		'name',
    	];
 
+
+  // public function categorys() 
+  //   {
+  //       return $this->belongsToMany(Category::class);
+  //   }
+   	// consultar relacion de table category_tag
 }

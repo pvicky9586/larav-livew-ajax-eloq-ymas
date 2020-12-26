@@ -22,13 +22,18 @@ class Post extends Model
 
 
     
-    // un post pertene a un usuario (*)
+
     public function user() 
     {
         return $this->belongsTo(User::class);
     }
 
-    // un post tiene muchos comments(N-M)
+    public function category() 
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+
     public function comments()
     {
            return $this->hasMany(Comment::class);
@@ -37,6 +42,10 @@ class Post extends Model
 
 
 
+    public function tags() //extracion de las todas las tag de un post
+    {
+           return $this->hasMany(PostTag::class);
+    }
 
 
 
@@ -46,24 +55,5 @@ class Post extends Model
 
 
 
-
-    // comments de un usuario
- 
-    //  etiquetas de un post 
-
-
-    
-
-
-
-
-
-
-
-
-
-  
-
-   // $count = Post::where('status', '=', 1)->count();
 
 }

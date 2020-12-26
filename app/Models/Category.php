@@ -10,9 +10,24 @@ class Category extends Model
     use HasFactory;
     protected $fillable = [
     	'name',
-    	'detall',
-    	'tag_id'
+    	'detall'
     ];
+
+    public function posts() 
+    {
+        return $this->hasMany(Post::class);
+    }
+
+
+
+    public function tags() 
+    {
+        
+        //tiene muchas etiquetas 
+        //debe ir dirigida a la tabla de categorias_tag
+        //
+    } 
+
 
 
 

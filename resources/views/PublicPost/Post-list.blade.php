@@ -1,4 +1,3 @@
-
 <h1 style="color: blue; margin-top: 10%; margin:2%;"  align="center" class="display-2">Publicaciones</h1>
 
 	@if (session('mensaje'))
@@ -8,36 +7,20 @@
 	    @endif
 <div class="container">
 
-<div  style="font-size:1.5rem; padding-top:1%;">Categoria: 
- 	<select wire:model="cat_id">
- 		<option value="">Seleccione</option>
- 		@foreach($cats as $cat)
- 		<option value="{{$cat->id}}">{{$cat->name}}</option>
- 		@endforeach
- 	</select>
- </div>
- <div  style="font-size:1.5rem; padding-top:1%;">Etiquetas: 
- 	@foreach($tags as $tag)
- 		<input type="checkbox" wire:model="tag_id" value="{{$tag->id}}">
- 	@endforeach
- 	<!-- hay una relacion de muchos a muchos entre post, categorias y etiq.... 
- 	* un post tiene una sola categoria, pero muchos post pertenecen a una misma categoria
- 	* un post tiene o puede tener muchas etiquetas y una etiqueta tiene muchos post
- 	-->
- 	
 
+	<div style="display: flex;">
+		<div align="left" style="margin: 0;">	
+			 <input type="text" class="search-input"   wire:model="search"  placeholder="Buscar Publicación" class="search">
+			 <img src="{{asset('images/search.jpeg')}}" width="150" >
+		</div>
 
-	<div>	
-		 <input type="text" class="search-input"   wire:model="search"  placeholder="Buscar Publicación" class="search">
-		 <img src="{{asset('images/search.jpeg')}}" >
+		<div>
+			<!-- button y modal -->
+			@include('PublicPost.create')
+		</div>		
 	</div>
-  
-	<div style="margin:1%; " align="right">
-		@include('PublicPost.create')
-	</div>
-	<div  class="public-Ah"style=""> 
-		Ahora disponibles 
-	</div>
+
+	<div  class="public-Ah"style=""> Ahora disponibles 	</div>
 
 	@foreach ($posts as $post)
 	<div style="display: flex; margin-top: 1%;" class="">
@@ -45,7 +28,7 @@
 	   	  @if($post->factory == 1)
 	        <img src="{{$post->file}}" width="150" height="190">  
 	      @else	  	    	
-	    	<img src="{{ Storage::url("$post->file")}}"> 	        
+	    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190"> 	        
           @endif
         </div>
         <div style="display: block; padding-left: 2%;">
@@ -64,7 +47,10 @@
 	     	  <br> 
 	     	  	
 	     	  <hr style="font-size: 1rem;" class="text-secondary">
-	        	<small style="position: absolute;">publicado: {{ date_format($post->created_at, 'j M Y') }}
+	        	<small style="position: absolute;">
+	        		@if($post->created_at)
+	        			publicado: {{ date_format($post->created_at, 'j M Y') }}
+	        		@endif
 	          </small>
 	        </div>
 	      	
