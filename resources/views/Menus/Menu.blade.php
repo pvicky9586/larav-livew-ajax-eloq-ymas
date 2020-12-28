@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <!-- MENU 1 -->
     <label>MENU responsive a los 800 media query</label>  

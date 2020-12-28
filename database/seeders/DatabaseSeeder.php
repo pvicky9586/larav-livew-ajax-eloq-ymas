@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             'professions',
     		'posts',
             'comments',
+            'category_tags',
             'tags',
             'categories'
     	]);
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(TagsTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
+        $this->call(CategoryTagSeeder::class); 
                 
 	    $this->call(PostsTableSeeder::class);	
 

@@ -10,7 +10,7 @@ use App\Models\Post;
 class CountComp extends Component
 {
 	
-	public $comments, $posts, $CommentPosts;
+	public $comments, $posts;
 	function mount(){
 		$comments=Comment::all();
 		$this->comments=$comments;	

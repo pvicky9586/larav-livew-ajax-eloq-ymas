@@ -16,7 +16,14 @@ body {
    margin-left:1%; 
    text-align: justify; }
 
-.img-tam{width:80%; height:30%; }
+.img-tam{width:50%; height:20%;}
+.img-tam-2{
+	background-image: url(images/search.jpeg); 
+	
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 
 .font{ font-size: 3rem; }
 nav{background:   #cecdd1 ;  margin: 0;}
@@ -41,7 +48,10 @@ thead{font-size: 2.5rem; }
 .public-Ah{background: blue; color: #fff; padding: 2%; font-weight: bold; font-size: 2rem;}
 
 
+.tag{font-weight: bold; font-size: 1.5rem;}
+.InputTitle{padding:3%; font-weight: bold; font-size: 2rem;}
 
 
-.tag-color{ color:yellow;  }
-.tag-color:hover{color: red;}
+
+input[type="checkbox"].tag + label { color: #8b6e11 ; font-size: 1.5rem; } 
+input[type="checkbox"].tag:checked + label { color: #30921c; font-size: 1.5rem;}

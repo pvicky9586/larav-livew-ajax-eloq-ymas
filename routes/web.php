@@ -9,6 +9,10 @@ use App\Models\Tag;
 use App\Models\Profile;
 
 
+Route::get('/js', function () {
+    return view('js');
+});
+
 Route::get('/', function () {
     return view('welcome');
 })->name('inicio');
@@ -34,10 +38,6 @@ Route::get('/Public', function(){
 	return view('PublicPost.index');
 })->name('Public');
 
-
-
-
-
 //CRUD solo laravel view crud_laravel
 Route::resource('posts', PostLaravController::class);
 //CRUD livewire view larav-livew
@@ -47,8 +47,6 @@ Route::get('/crud_larav-livew', function(){
 //CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
 Route::view('users','crud_larav-livew.crud-modal.home');
 
-
-
 //CRUD view crud-larav-ajax
   Route::resource('post','PostController');
   Route::POST('addPost','PostController@addPost');
@@ -56,13 +54,6 @@ Route::view('users','crud_larav-livew.crud-modal.home');
   Route::POST('deletePost','PostController@deletePost');
 
 
-//Agrupar rutas que pertenecen a un controladores que estan bajo un mismo namespace ejemplo:  
-//Route::group(['middleware' => ['web'], function{ 
-  // Route::resource('post','PostController');
-  // Route::POST('addPost','PostController@addPost');
-  // Route::POST('editPost','PostController@editPost');
-  // Route::POST('deletePost','PostController@deletePost');
-//});
 
 
 
@@ -89,10 +80,11 @@ Route::get('/eloq', function(){
   // $user->comments;
   // $user->posts; //todos los post que tenga un usuario
 
-  $post=Post::find(1);
+  $tag=Ta::find(1);
  // $post->cat;  //commentarios de un post
   $post->user;  // a que user pertenece dicho post
   $post->category;
+  $post->tags;
  // $post->Count('comments');
   
   //return $user; //retorno todos los commentario de un usuario

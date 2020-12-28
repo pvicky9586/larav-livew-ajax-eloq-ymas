@@ -1,5 +1,5 @@
 <div>
-    <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-warning" style="padding: 1%; font-weight: bold; margin-right: 20%;">
+    <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success" style="padding: 7%; font-size: 2rem; font-weight: bold; margin-left: 90%; loat: left;">
        <!--  <img src="{{asset('images/publicar.png')}}" width="100"> -->
     	Añadir Publicacion
     </button>
@@ -15,80 +15,76 @@
     <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="display-3" id="exampleModalLabel">Añadir Publicacion</h5>
+                <h5 class="display-3 text-primary" id="exampleModalLabel">Crear Publicacion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true close-btn"><img src="https://lh3.googleusercontent.com/proxy/deq7G3vcAEDtiZd3fAy7oXlUWNBJexK4ZEQ63cmvKo5JPPksO0Uo9ut3rjyLU1343r3nM0ps0gZ8ilKbglu4VGkUsT1-L84sWyM5IQVNPed8InAn1b5V_CQ" width="50"></span>
+                     <span aria-hidden="true close-btn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe71zuOpu-Ukml7XcfmOMHQR7wroVgKjodDA&usqp=CAU" width="50"></span>
                 </button>
             </div>
 
-    <div class="modal-body" style=" height: auto;
-  width: 90%;
-  overflow-y: auto;">
+    <div class="modal-body" style="">
         <form enctype="multipart/form-data">
 
+          <div class="form-group">
+            @error('title') <span class="text-danger error">Titulo del Post</span>@enderror
+                
+             <input type="text" wire:model="title" name="title" placeholder="Titulo de la publicacion" class="form-control text-success  InputTitle">
+           
+            </div>
 
             <div class="form-group">
-                <label style="font-size:2rem;">Categoria: </label>
+                @error('category_id') <span class="text-danger error">*</span>@enderror<label style="font-size:2rem;">Categoria: </label>
                 <select wire:model="category_id">
                    <option value="">Seleccione</option>
                   @foreach($categorys as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                   @endforeach
-                </select>
+                </select>                 
             </div>
         
-            <div  class="form-group">
-                <label>Etiquetas: </label>
-                    @foreach($tags as $index=>$tag)
-                        <div >
-                        <input type="checkbox" wire:model="tag_id"  id="tag" value="{{$tag->id}}" name="checkbox-test" class="form-checkbox">
-                       <a href="#" class="tag-color" style="text-decoration: none;"> {{$tag->name}}</a>
-                        </div>
-                    @endforeach
-            </div>
-           
-
-            <div class="form-group">
-                <mark class="display-4 text-primary text-center">Title</mark>
-                <input type="text" wire:model="title" name="title" class="form-control text-success" style="padding:3%; font-weight: bold; font-size: 2rem;">
-                @error('title') <span class="text-danger error">{{ $message }}</span>@enderror
-            </div>
-
-            <div class="form-group">
-                <label class="text-secondary">Description</label>   
-           
-                    <textarea  wire:model="body"  class="ckeditor"  id="editor" rows="8" cols="80">
-                     
-                    </textarea>
-               
-                @error('body') <span class="text-danger error">{{ $message }}</span>@enderror           
-            </div>
+            <div  class="form-control">
+                <label class="tag">Etiquetas:
+                <div align="center" style="margin-left: 10%; width: 80%;">
+                  @foreach($tags as $index=>$tag)                       
+                    <input type="checkbox" wire:model="tag_id" class="tag" id="tag" value="{{$tag->id}}"> 
+                    <label>{{$tag->name}}</label>&nbsp;&nbsp;
+                  @endforeach
+                  @error('tag_id') <span class="text-danger error">Indique almenos una etiqueta para el post</span>@enderror</label>
+                </div>
+            </div><br>
 
 
             <div class="form-group">
                <label>Imagen</label>
                <input type="file" wire:model="file"  accept="image/*">
-                @error('file') <span class="text-danger error">{{ $message }}</span> @enderror
+                @error('file') <span class="text-danger error">Seleccione una imagen</span> @enderror
             </div>
             <div>
                @if ($file)
-                 <img src="{{ $file->temporaryUrl() }}">
+                 <img src="{{ $file->temporaryUrl() }}" style="max-width: 100%;">
                @endif
             </div>
 
                   
             <div class="form-group">
-                <label>Publicar ¿?</label>
-                    <input type="radio" wire:model="status" value="1">Si
-                    <input type="radio" wire:model="status" value="0">No
+                  @error('status') <span class="text-danger error">*</span>@enderror <label>Publicar?</label>
+                    <label style="color: blue;"><input type="radio" wire:model="status" value="1">Si</label>
+                    <label style="color: red;"><input type="radio" wire:model="status" value="0">No</label>
+                   
+            </div>
+
+
+            <div class="" align="center" style=";"> <!-- class="ckeditor"-->
+                @error('body') <span class="text-danger error">*</span>@enderror
+                <label class="text-secondary">Description</label>  <br>           
+                    <textarea  wire:model="body" id="editor" rows="5" cols="50" ></textarea>               
+                           
             </div>
       </form>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal btn-lg">Save changes</button>
-            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+        <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal btn-lg">Save changes</button>
+      </div>
                
     </div>
 

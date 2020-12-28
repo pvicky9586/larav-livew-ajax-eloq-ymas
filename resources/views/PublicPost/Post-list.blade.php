@@ -19,50 +19,61 @@
 			@include('PublicPost.create')
 		</div>		
 	</div>
-
 	<div  class="public-Ah"style=""> Ahora disponibles 	</div>
 
 	@foreach ($posts as $post)
-	<div style="display: flex; margin-top: 1%;" class="">
-		<div>
-	   	  @if($post->factory == 1)
-	        <img src="{{$post->file}}" width="150" height="190">  
-	      @else	  	    	
-	    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190"> 	        
-          @endif
-        </div>
-        <div style="display: block; padding-left: 2%;">
-        	<div align="center">
-        		 <h1 class="display-4 text-success text-uppercase">{{$post->title}}</h1>
-        	</div>
-        	<div class="text-muted" style="padding-right: 4%; text-align: center;">	
-	       	  <?php $tam = strlen($post->body); 
-				if ($tam <= 200){
-					echo $post->body;
-				}else{ 
-					echo substr($post->body, 0, 200);
-					echo '<b>...</b>';
-				}	        		
-	          ?>
-	     	  <br> 
-	     	  	
-	     	  <hr style="font-size: 1rem;" class="text-secondary">
-	        	<small style="position: absolute;">
-	        		@if($post->created_at)
-	        			publicado: {{ date_format($post->created_at, 'j M Y') }}
-	        		@endif
-	          </small>
-	        </div>
-	      	
-        </div>
-    
-	     
-	      		
-	      
-	</div>
+	
+			<div style="display: flex; margin-top: 1%;" class="">
+				<div>
+			   	  @if($post->factory == 1)
+			        <img src="{{$post->file}}" width="150" height="190">  
+			      @else	  	    	
+			    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190"> 	        
+		          @endif
+		        </div>
+		        <div style="display: block; padding-left: 2%;">
+		        	<div align="center">
+		        		 <h1 class="display-4 text-success text-uppercase">{{$post->title}}</h1>
+		        	</div>
+		        	<div class="text-muted" style="padding-right: 4%; text-align: center;">	
+					       	  <?php $tam = strlen($post->body); 
+								if ($tam <= 200){
+									echo $post->body;
+								}else{ 
+									echo substr($post->body, 0, 200);
+									echo '<b>...</b>';
+								}	        		
+					          ?>
+			     	  <br> 
+		<details>
+			<summary><i class="">comentarios</i></summary>
+				<div class="container" style="margin-top: 1%; width: 80%;">
+			   		@foreach($comments as $comment)
+			   		{{$comment}}
+		    			@if ($post->id == $comment->post_id)
+		    				 <small class=""> {{$comment->comment}}</span><br>
+		    			@endif
+					@endforeach
+				</div>
+		</details>
+		       		 	
 
-	<hr style="color:#c0c0c0; background-color: gray; width:85%;"/>   
-	        
+		       
+
+			     	  <hr style="font-size: 1rem;" class="text-secondary">
+			        	<small style="position: absolute;">
+			        		@if($post->created_at)
+			        			publicado: {{ date_format($post->created_at, 'j M Y') }}
+			        		@endif
+			          </small>
+			        </div>
+			      	
+		        </div>
+					      
+			</div>
+
+			<hr style="color:#c0c0c0; background-color: gray; width:85%;"/>   
+	       
 	@endforeach
 	<div> {{ $posts->links() }}</div>
 </div>

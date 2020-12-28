@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
 
 
@@ -48,47 +48,51 @@
 </div>
       
   <!--Public Post -->
-  <div  class="group">
-      <h2 class="display-3">Publicaciones</h2>
-      <a href="{{ route('Public') }}">Publicar un Post</a>
+  <div  class="group text-center">
+      <h2 class="display-3  text-success">Publicaciones</h2>
+      <a href="{{ route('Public') }}">ver/publicar</a>
   </div>
 
 
 <div style="display: flex;">
     <!--SEARCH-->
-      	<div class="group" style="height: 100%;">
-       		<img src="{{asset('images/search.png')}}"   class="img-tam">
-        	<h2 class="display-4">Filtra </h2>
-        	Suponemo que tenemos demaciados registros en nuestra Base de Datos. En este caso, ¡el <b>filtrado </b> resulta útil por ser la via mas facil y rapida de ver únicamente los datos que nos interesa!
-            <details>
-              <summary>Continuar...</summary>
-                La vista que se obtiene tras aplicar un filtro contiene solo aquellos registros que incluyen los valores seleccionados, mientras que el resto de los datos permanecen oculto hasta que se borra el filtro.<br>
-          <a href="{{ route('search')}}">Ver ejemplo</a>
-            </details>
-        
-       </div>
+    <div class="img-tam-2 group ">
+          
+            
+         
+      		
+        	
+            <label><b class="display-3 text-center">Search</b><br><i>Suponiendo que tenemos demaciados registros en nuestra Base de Datos.</i> En este caso, ¡el <b>filtrado 0 search</b> en ingles, resulta ser la via mas facil y rapida de ver únicamente los datos que nos interesa!</label>
+              <details>
+                <summary>mas...</summary>
+                  La vista que se obtiene tras aplicar un filtro contiene solo aquellos registros que incluyen los valores seleccionados, mientras que el resto de los datos permanecen oculto hasta que se borra el filtro.<br>
+                 <a href="{{ route('search')}}">Ver ejemplo</a>
+              </details>
+      </div>        
+    
+
 
       
 	<!--COUNT-->
  		<div class="group">
-       		<img src="{{asset('images/count.jpg')}}" class="img-tam"><br><br>
+       		<img src="{{asset('images/count.jpg')}}" class="img-tam">
         	<h1>Contado registros</h1>
         	<span>Existen funciones  aplicadas  a Mysql que nos permiten contar registros, hacer calculos aritmeticos, logico y de comparacion, entre otras... 
           </span>         
         <details align="center">
-          <summary>Por ejemplo</summary>
+          <summary>mass...</summary>
     			Imaginemos que en nuestra tabla <b><i>'usuarios'</i></b> contiene muchos registros y muchos usuarios han hecho publicaciones, a su vez esas publicaciones tienen comentarios.
     			Para averiguar la cantidad sin necesidad de contarlos manualmente usamos la función "count()":<br>
-       		<a href="{{ route('counts')}}">ejercicio</a>
+       		<a href="{{ route('counts')}}">Ejemplo</a>
         </details>
     </div>
 
 
   <!--MENU -->
     <div  class="group">
-	      <img src="{{asset('images/menu.jpg')}}" class="img-tam"><br><br>
+	      <img src="{{asset('images/menu.jpg')}}" class="img-tam">
         <h1>Menus</h1>
-	       De un diseño atractivo, organizado y bien estructurado dependera la imagen que des a tu pagina web. <b>Organizate y ponle ganas</b>, <i>porque mucho dependera de tu creatividas!</i> <br>
+	       De un diseño atractivo, organizado y bien estructurado dependera la imagen que des a tu pagina web. <b>Organizate y ponle ganas</b>, <i>porque mucho dependera de tu creatividas!</i>
          <div style="margin-left: 5%;">
 	       <details>
            <summary>Menus</summary> <!--abrir enlaces en otra pestaña-->

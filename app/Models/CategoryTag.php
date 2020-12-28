@@ -11,4 +11,5 @@ class CategoryTag extends Model
      protected $fillable = [
         'category_id','tag_id'
        ];
+
 }

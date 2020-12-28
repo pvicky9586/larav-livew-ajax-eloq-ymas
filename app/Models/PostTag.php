@@ -13,10 +13,6 @@ class PostTag extends Model
         'created_at'
        ];
 
-    
-    // public function posts() //extracion de las todas las tag de un post
-    // {
-    //     return $this->hasMany(Post::class);
-    // }
+
 }
 

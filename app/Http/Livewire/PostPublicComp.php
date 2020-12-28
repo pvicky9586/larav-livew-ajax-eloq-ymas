@@ -5,10 +5,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Post;
 
+use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\Comment;
 
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
@@ -25,28 +26,29 @@ class PostPublicComp extends Component
 	public $categorys, $tags, $tag_id=[];
 	public $factory = 0;
 	public $File='';
-	public $post, $mensaje;
+	public $post, $mensaje,  $comments;
 	public $updateMode = false;
 	public $search = '';
 	
 
 	function mount(){
 		$categorys=Category::all();
-			$this->categorys=$categorys;
-
+		$this->categorys=$categorys;
+		
 		$tags=Tag::all();
-			$this->tags=$tags;
-	}
+		$this->tags=$tags;
+		
+		$comments = Comment::all();
+    	$this->comments=$comments;
+	}	
 
 
-	public function updatingSearch()
-    {
-        $this->resetPage();
-    }
+
 
 
     public function render()
-    {		
+    {	    		
+
     	  return view('livewire.post-public-comp',[
 			'posts'=> Post::where(function($sub_query)
 			{
@@ -56,12 +58,22 @@ class PostPublicComp extends Component
 			]);
     }
 
+
+
+   public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
+
+
   public function store() {
         $validatedDate = $this->validate([
               'title' => 'required',
-              'categoty' => 'required',
-              'tag_id'=>'required',
               'body' => 'required',
+              'category_id' => 'required',
+              'tag_id'=>'required',
+              'status'=>'required',
               'file' => 'required|image|max:1024',
         ]);
         // $imgUrl = url($this->file); 
@@ -70,11 +82,6 @@ class PostPublicComp extends Component
         // $imgName = $this->file->getClientOriginalName();
 
         $File = $this->file->store('ImgPost'); //upload nombre aleatorio, evida reg repetidos
-
-
-        // $this->file->storeAs('posts', $this->file,'public'); 
-        //upload con 'storesAs' tres params (directory, nombre-tmp-file, disk(definido in app/conf/filesystems.php))
-
         $save = Post::create([
 			 'title' => $this->title,
 			 'body' => $this->body,

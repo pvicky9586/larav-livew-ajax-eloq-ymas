@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My's Scopes</title>
+    <title>Scopes</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -12,43 +12,31 @@
 
     <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
   </head>
-  <body>
+<body>
 
-       <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
-        <div class="navbar-header">
-           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-warning">
+
+  <nav  class="navbar navbar-ststic-top bg-primary" role="navigation">  
+        <div class="" style="text-align: center; color:  #ffd433;">
+           <h2 class="">
               Laravel - Livewire - AJAX & Eloquent
             </h2>
-           
-        </div>
-        <div class="container">
-             <a class="nav-link font text-warning" href="{{ route('inicio')}}">Home</a>
-             <!--   <span class="glyphicon glyphicon-home"></span> -->
+                 
+            <div style=""> 
+              <span class="glyphicon glyphicon-home">   
+                <a style="color: #ff6b33; font-weight: bold;" class="" href="{{ route('inicio')}}">Home</a> 
+              </span>
+            </div>
         </div>
     </nav>
 
 
 
-
-       <!-- <nav class="navbar-ststic-top"> 
-           <span style="font-size: 3rem;">Larave - Livewire - AJAX & Eloquent</span> &nbsp;&nbsp;        
-              <span class="glyphicon glyphicon-home">
-                <a class="" href="{{ route('inicio')}}">Home</a>
-             </span>
-       </nav>
- -->
-   
-
-
-
-
-    <div class="" style="margin-left: 5%; margin-right:10%; ">
+  <div class="container" style="margin-left: 5%; margin-right:10%; ">
        @yield('content')
-    </div>
- <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </div>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 <script type="text/javascript">
@@ -177,5 +165,7 @@ function closeModal(){
 }
 
 </script>
-  </body>
+
+
+</body>
 </html>
