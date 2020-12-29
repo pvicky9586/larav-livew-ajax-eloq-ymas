@@ -30,31 +30,41 @@
 
         <div class="container">
             <div class="form-group">
-                <h3 class="">Title:</h3>
+                <h3 class="display-3">Title:</h3>
                 <input type="text" name="title" value="{{ $post->title }}" class="form-control" style="padding: 2%; font-size: 2rem; color: blue; font-weight: bold;" placeholder="title">
             </div>
          
             <div class="form-group">
-                 <strong>Body:</strong>
-                 <textarea class="form-control" style="height:50px" name="body" placeholder="body">{{ $post->body }}</textarea>
+                 <strong>Body:</strong><br>
+                 <textarea rows="5" style="font-size:2rem; width: 80%;" name="body" placeholder="body">{{ $post->body }}</textarea>
             </div>
+            <div align="center">
+            @if($post->file)
+               
+              @if($post->factory == 1)       
+                <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible aun"> 
+              @else             
+                 <img src="{{ Storage::url("$post->file")}}" width="150" height="190">           
+              @endif
+             @endif
+              </div>
 
             <div class="form-group" > 
-                <strong>Publicado</strong>&nbsp;
                 @if($post->status === 1)
-                    Si<input type="radio" name="status" value="1" checked  class="form-control" >
+                    <label class="text-success">Published </label>
                     &nbsp;&nbsp;&nbsp;
-                    No<input type="radio" name="status" value="0">
+                    stop posting<input type="radio" name="status" value="0">
                 @else
-                    Si<input type="radio" name="status" value="1">
-                    &nbsp;&nbsp;&nbsp;
-                    No<input type="radio" name="status" value="0" checked>
+                <label class="text-danger">No published</label>
+                     &nbsp;&nbsp;&nbsp;
+                    Publicar ahora<input type="radio" name="status" value="1">
+                    
                 @endif
             </div>
 
             <div align="center">
-                <button type="submit" class="btn btn-success btn-lg ">
-                Actualizar</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block">
+                Update</button>
             </div>
         </div>
 

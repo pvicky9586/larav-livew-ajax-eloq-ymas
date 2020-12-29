@@ -25,7 +25,7 @@ class PostFactory extends Factory
     {
        
          return [
-          'title' => $this->faker->text(15), //20 caracteres
+          'title' => $this->faker->text(20), //20 caracteres
           'body' => $this->faker->text(300),  //50 caracteres
           'file' => $this->faker->imageUrl($width = 400, $height = 400),
           'status' => $this->faker->randomElement(['0','1']),

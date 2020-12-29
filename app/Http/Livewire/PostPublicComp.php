@@ -26,7 +26,7 @@ class PostPublicComp extends Component
 	public $categorys, $tags, $tag_id=[];
 	public $factory = 0;
 	public $File='';
-	public $post, $mensaje,  $comments;
+	public $post, $mensaje,  $comments, $commentsPost;
 	public $updateMode = false;
 	public $search = '';
 	
@@ -40,6 +40,11 @@ class PostPublicComp extends Component
 		
 		$comments = Comment::all();
     	$this->comments=$comments;
+
+		$commentsPost = Post::withCount(['comments'])->get();		
+    	$this->commentsPost=$commentsPost; // pasar name comment
+
+
 	}	
 
 

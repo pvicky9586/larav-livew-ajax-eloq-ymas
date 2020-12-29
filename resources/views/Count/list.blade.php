@@ -13,9 +13,18 @@
 	        @foreach ($users as $user)
 	            <tr @if($i % 2 == 0) class="td-i" @endif>
 	            	<td class="td-tit">{{ $user->name }}</td>
-	                <td class="text-center">{{ $user->posts_count }}</td>
-	                <!-- comentarios de cada post -->
+
+	            	@if($user->posts_count > 0)
+	            	<td class="text-center">{{ $user->posts_count }}</td>
+	            	@else
+	            	<td class="text-center">no post</td>
+	                @endif
+
+	                @if($user->comments_count > 0)
 	                <td class="text-center">{{ $user->comments_count }}</td>
+		            @else 
+		             <td class="text-center">No comments</td>
+		            @endif
 	            </tr>
 	            <?php $i++; ?>
 	        @endforeach
@@ -25,8 +34,10 @@
 
 
 
+
+
 <div class="container" style="margin-top: 3%;"> 
-	<h1 class="display-5" >Nª Comentarios de post</h1>
+	<h1 class="display-3 text-center" >Comentarios de posts</h1>
 	<table class="table table-borde">
 	    <thead class="thead-dark">
 	        <tr>
@@ -39,15 +50,13 @@
 	    @foreach($posts as $post)
 	    <tr @if($i % 2 == 0) class="td-i" @endif >	
 	        <td class="text-center">{{$post->title}}</td> 
-	    	@foreach($comments as $comment)	
-	    		@if ($post->id == $comment->post_id)	     				  
-					<td class="text-center"> {{ $post->comments_count }} </td>
-				@break
-				@else
-					<td class="text-center"> {{ $post->comments_count }} </td>
-				@break
-				@endif
-            @endforeach
+	         @if($post->comments_count > 0)
+	            <td class="text-center">{{ $post->comments_count }}</td>
+		     @else 
+		        <td class="text-center">No comments</td>
+		     @endif
+
+
 	        <?php $i++; ?>
 	    </tr>
 		@endforeach
@@ -56,15 +65,17 @@
 </div>
 
 
-<div class="container" style="margin-top: 3%;"> 
-	<h1 class="display-5" >Ver Comentarios de post</h1>
+<div class="" style="margin-top: 3%;"> 
+	<h1 class="display-3 text-center" >Ver Comentarios</h1>
 
 	  	@foreach($allposts as $post)	
 		       		 	
 		    @foreach($comments as $comment)	 
 		       	@if ($post->id == $comment->post_id)
-		       	<div style="margin-top: 1%; border: solid 1px; border-color: red;">
-			   		<h1 class="display-1">{{$post->title}}</h1>	
+		       	<div class="border border-secondary">
+			   		<h1 class="display-3">{{$post->title}}</h1>	
+			   		
+			   		<p class="h5 text-danger">Comentarios mas recientes:</p>
 			   		@foreach($comments as $comment)
 		    			@if ($post->id == $comment->post_id)
 		    				 <small class=""> {{$comment->comment}}</span><br>
@@ -75,8 +86,7 @@
 				@endif	
 
 				
-	        @endforeach
-		    		           
+	        @endforeach	           
 		@endforeach
 		
 

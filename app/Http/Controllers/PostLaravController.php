@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\Models\Post;
+use App\Models\PostTag;
+use App\Models\Comment;
 
 class PostLaravController extends Controller
 {
@@ -12,9 +14,10 @@ class PostLaravController extends Controller
 
     public function index()
     {
+       
        $posts= Post::orderBy('id','DESC')->paginate(10);
        return view('crud-larav.index',compact('posts'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);;
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
  
@@ -29,6 +32,7 @@ class PostLaravController extends Controller
          $request->validate([
             'title' => 'required',
             'body' => 'required',
+            'status' => 'required',
         ]);
 
         Post::create($request->all());
@@ -57,6 +61,7 @@ class PostLaravController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
+            'status' => 'required',
         ]);
 
         $post = Post::find($id);
@@ -67,10 +72,17 @@ class PostLaravController extends Controller
 
     public function destroy($id)
     {
+        $postCom = Comment::where('post_id','=',$id)->first();
+        $postTag = PostTag::where('post_id','=',$id)->first();
+        if($postCom || $postTag){
+           return redirect()->route('posts.index')
+            ->with('success', 'No se pudo eliminar el post, consulte al administrador de la base de datos');
+        }else{
         $post = Post::find ($id);
         $post->delete();
 
         return redirect()->route('posts.index')
             ->with('success', 'Post Eliminado');
+        }
     }
 }

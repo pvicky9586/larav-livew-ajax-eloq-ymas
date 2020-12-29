@@ -7,7 +7,7 @@
         </div>
     @endif
 <div  >
-  <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >           
+  <!-- <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >      -->      
    
                       
     <table class="table" >           
@@ -22,8 +22,17 @@
   
         @foreach ($posts as $post)
             <tr>
-                <td class="display-3">{{ $post->title }}</td>
-                <td class="">{{ $post->body }}</td>
+                <td class="display-5 text-center">{{ $post->title }}</td>
+                <td  class="text-muted" style="padding-right: 4%; text-align: justify;"> 
+                              <?php $tam = strlen($post->body); 
+                                if ($tam <= 80){
+                                    echo $post->body;
+                                }else{ 
+                                    echo substr($post->body, 0, 80);
+                                    echo '<b>...</b>';
+                                }                   
+                              ?>
+                </td>
                 <td>
                     <button class="btn btn-success" wire:click="edit({{ $post->id }})">Editar
                     </button>

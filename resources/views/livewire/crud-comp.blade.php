@@ -1,15 +1,12 @@
-<div class=" " align="center">
-			<h1 align="center">CRUD Just Laravel</h1>
-	<div class="" style="display:flex; margin-top:10%;">
-		<div style="width: 40%; margin-top: 10%;">
-		
+<div class=" " >
+	<h1 align="center" class="display-2">CRUD Laravel livewire</h1>
+	<div class="" style="display:flex; margin-top:5%;">
+		<div>
 			@include('crud_larav-livew.form')<br>
 		 	@include("crud_larav-livew.$view") 
-
-		</div>
-		
-	   <div style="width:60%;">	   		
+		 </div>	
+		 <div>
 			@include('crud_larav-livew.table')  
-	   </div>	
+	  	</div>
 	</div>
 </div>

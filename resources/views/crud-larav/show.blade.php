@@ -21,12 +21,14 @@
                 <strong>Created in:</strong>
                 {{ date_format($post->created_at, 'j M Y') }}
             </div>
-            @if($post->file)
+            
             <div align="center">
-                  <img src="{{$post->file}}" width="400" height="200">
+              @if($post->factory == 1)       
+                <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible aun"> 
+              @else             
+                 <img src="{{ Storage::url("$post->file")}}" width="150" height="190">           
+              @endif
             </div>
-            @endif
-       
             <div class="form-group">
                  @if ($post->status === 1)
                     <strong class="text-success display-3"> Publicado</strong>

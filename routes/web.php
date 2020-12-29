@@ -2,16 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Post;
-use App\Models\Category;
-use App\Models\Tag;
-use App\Models\Profile;
 
-
-Route::get('/js', function () {
-    return view('js');
-});
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,9 +15,9 @@ Route::get('/count', function(){
 
 
 
-Route::get('/menu', function(){
-	return view('Menus.Menu');
-})->name('menu');
+// Route::get('/menu', function(){
+// 	return view('Menus.Menu');
+// })->name('menu');
 
 
 Route::get('/search', function(){
@@ -39,13 +30,7 @@ Route::get('/Public', function(){
 })->name('Public');
 
 //CRUD solo laravel view crud_laravel
-Route::resource('posts', PostLaravController::class);
-//CRUD livewire view larav-livew
-Route::get('/crud_larav-livew', function(){
-  return view('crud_larav-livew.index');
-})->name('crud_larav-livew');
-//CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
-Route::view('users','crud_larav-livew.crud-modal.home');
+  Route::resource('posts', PostLaravController::class);
 
 //CRUD view crud-larav-ajax
   Route::resource('post','PostController');
@@ -54,45 +39,17 @@ Route::view('users','crud_larav-livew.crud-modal.home');
   Route::POST('deletePost','PostController@deletePost');
 
 
+//CRUD livewire view larav-livew
+  Route::get('/crud_larav-livew', function(){
+    return view('crud_larav-livew.index');
+  })->name('crud_larav-livew');
+
+//CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
+  Route::view('users','crud_larav-livew.crud-modal.home');
 
 
 
 
-
-
-
-
-
-
-
-//PRUEBAS
-Route::get('/cons', function(){
-  $prof = Category::all();
-  $tag = Tag::all();
-  $prof = Profile::all();
-  return $prof;
-});
-
-// consultas Eloquent
-
-Route::get('/eloq', function(){
-  // $user = User::find(1);
-  // $user->comments;
-  // $user->posts; //todos los post que tenga un usuario
-
-  $tag=Ta::find(1);
- // $post->cat;  //commentarios de un post
-  $post->user;  // a que user pertenece dicho post
-  $post->category;
-  $post->tags;
- // $post->Count('comments');
-  
-  //return $user; //retorno todos los commentario de un usuario
- // return $post;  //retorno los comentarios de un post
-
-
- return $post;
-});
 
 
 

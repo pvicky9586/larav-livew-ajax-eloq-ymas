@@ -25,12 +25,12 @@
 <body>
     <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
         <div class="">
-           <h2 class="p-3 mb-2 bg-gradient-success display-3 text-warning">
+           <div class="p-1 mb-4 bg-gradient-success display-4 text-warning">
               Laravel - Livewire - AJAX & Eloquent
-            </h2> 
+            </div> 
             <div style="margin:0;"> 
               <span class="glyphicon glyphicon-home">   
-                <a class="font text-warning" href="{{ route('inicio')}}">Home</a> 
+                <a class="font text-warning Muted link" href="{{ route('inicio')}}">home</a> 
               </span>
             </div>
         </div>

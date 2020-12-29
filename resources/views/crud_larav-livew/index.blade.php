@@ -2,7 +2,7 @@
 @section('content')
     
 <div class="toll">
-	 <h2>Listado de Post</h2>
+	 <img src="https://laravelarticle.com/filemanager/uploads/laravel-livewire.png" width="300" height="100">
     <div>@livewire('crud-comp')</div>
         
 </div>     
