@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\User;
+=======
+>>>>>>> 3e23ce6... published cambios
 =======
 >>>>>>> 3e23ce6... published cambios
 
@@ -26,7 +29,10 @@ use App\Models\User;
 >>>>>>> 3e23ce6... published cambios
 =======
 
+<<<<<<< HEAD
 
+>>>>>>> 3e23ce6... published cambios
+=======
 >>>>>>> 3e23ce6... published cambios
 Route::get('/', function () {
     return view('welcome');
@@ -68,6 +74,7 @@ Route::get('/Public', function(){
 //CRUD solo laravel view crud_laravel
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::resource('posts', PostLaravController::class);
 //CRUD livewire view larav-livew
 Route::get('/crud_larav-livew', function(){
@@ -82,6 +89,9 @@ Route::get('/users', function(){
 
 	return view('user',compact('users'));
 });
+=======
+  Route::resource('posts', PostLaravController::class);
+>>>>>>> 3e23ce6... published cambios
 =======
   Route::resource('posts', PostLaravController::class);
 >>>>>>> 3e23ce6... published cambios
@@ -114,13 +124,19 @@ Route::get('/users', function(){
 >>>>>>> 3e23ce6... published cambios
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
   Route::view('users','crud_larav-livew.crud-modal.home');
 =======
+=======
+>>>>>>> 3e23ce6... published cambios
 //CRUD livewire view larav-livew
   Route::get('/crud_larav-livew', function(){
     return view('crud_larav-livew.index');
   })->name('crud_larav-livew');
+<<<<<<< HEAD
+>>>>>>> 3e23ce6... published cambios
+=======
 >>>>>>> 3e23ce6... published cambios
 
 //CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
@@ -134,6 +150,7 @@ Route::get('/users', function(){
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 //PRUEBAS
@@ -167,6 +184,9 @@ Route::get('/eloq', function(){
 
 
 =======
+>>>>>>> 3e23ce6... published cambios
+=======
+
 >>>>>>> 3e23ce6... published cambios
 =======
 

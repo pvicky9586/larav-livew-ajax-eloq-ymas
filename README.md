@@ -90,6 +90,9 @@ Repository where you will find tests made in Laravel_8 with integration of the L
 ## IMPORTATE
 CONEXION INTERNET
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 3e23ce6... published cambios
+=======
 >>>>>>> 3e23ce6... published cambios
 =======
 >>>>>>> 3e23ce6... published cambios
