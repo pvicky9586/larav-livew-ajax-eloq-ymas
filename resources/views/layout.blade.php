@@ -35,6 +35,7 @@
 
 
     <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
+<<<<<<< HEAD:resources/views/layout.blade.php
         <div class="navbar-header">
            <h2 class="p-3 mb-2 bg-gradient-success display-5 text-warning">
               Laravel - Livewire - AJAX & Eloquent
@@ -44,6 +45,17 @@
         <div class="container">
              <a class="nav-link font text-warning" href="{{ route('inicio')}}">Home</a>
              <!--   <span class="glyphicon glyphicon-home"></span> -->
+=======
+        <div class="">
+           <div class="p-1 mb-4 bg-gradient-success display-4 text-warning">
+              Laravel - Livewire - AJAX & Eloquent
+            </div> 
+            <div style="margin:0;"> 
+              <span class="glyphicon glyphicon-home">   
+                <a class="font text-warning Muted link" href="{{ route('inicio')}}">home</a> 
+              </span>
+            </div>
+>>>>>>> 3e23ce6... published cambios:resources/views/layouts/layout.blade.php
         </div>
     </nav>
 

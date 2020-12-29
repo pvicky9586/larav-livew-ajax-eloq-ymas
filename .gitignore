@@ -10,3 +10,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
+=======
+
+resources/views/js.blade.php
+resources/views/borrador.js
+resources/views/GUIA.txt
+>>>>>>> 3e23ce6... published cambios

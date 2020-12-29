@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\User;
+=======
+>>>>>>> 3e23ce6... published cambios
 
 //use App\Http\Livewire\PostComp;
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +21,8 @@ use App\Models\User;
 |
 */
 
+=======
+>>>>>>> 3e23ce6... published cambios
 Route::get('/', function () {
     return view('welcome');
 <<<<<<< HEAD
@@ -36,9 +42,9 @@ Route::get('/count', function(){
 
 
 
-Route::get('/menu', function(){
-	return view('Menus.Menu');
-})->name('menu');
+// Route::get('/menu', function(){
+// 	return view('Menus.Menu');
+// })->name('menu');
 
 
 Route::get('/search', function(){
@@ -55,6 +61,7 @@ Route::get('/Public', function(){
 
 
 //CRUD solo laravel view crud_laravel
+<<<<<<< HEAD
 Route::resource('posts', PostLaravController::class);
 //CRUD livewire view larav-livew
 Route::get('/crud_larav-livew', function(){
@@ -69,6 +76,9 @@ Route::get('/users', function(){
 
 	return view('user',compact('users'));
 });
+=======
+  Route::resource('posts', PostLaravController::class);
+>>>>>>> 3e23ce6... published cambios
 
 //CRUD view crud-larav-ajax
   Route::resource('post','PostController');
@@ -79,6 +89,7 @@ Route::get('/users', function(){
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 //Agrupar rutas que pertenecen a un controladores que estan bajo un mismo namespace ejemplo:  
 //Route::group(['middleware' => ['web'], function{ 
   // Route::resource('post','PostController');
@@ -86,6 +97,15 @@ Route::get('/users', function(){
   // Route::POST('editPost','PostController@editPost');
   // Route::POST('deletePost','PostController@deletePost');
 //});
+=======
+//CRUD livewire view larav-livew
+  Route::get('/crud_larav-livew', function(){
+    return view('crud_larav-livew.index');
+  })->name('crud_larav-livew');
+>>>>>>> 3e23ce6... published cambios
+
+//CRUD laravel livewire Modal views en  crud-larav-livew.crus-modal
+  Route::view('users','crud_larav-livew.crud-modal.home');
 
 
 
@@ -96,7 +116,7 @@ Route::get('/users', function(){
 
 
 
-
+<<<<<<< HEAD
 //PRUEBAS
 Route::get('/cons', function(){
   $prof = Category::all();
@@ -127,6 +147,8 @@ Route::get('/eloq', function(){
 
 
 
+=======
+>>>>>>> 3e23ce6... published cambios
 
 
 
