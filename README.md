@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -61,6 +62,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 =======
+=======
+>>>>>>> Eloquent
 # Scopes 
 Repository where you will find tests made in Laravel_8 with integration of the Livewire component, ORM Eloquent and Ajax
 
@@ -91,8 +94,11 @@ Repository where you will find tests made in Laravel_8 with integration of the L
 CONEXION INTERNET
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3e23ce6... published cambios
 =======
 >>>>>>> 3e23ce6... published cambios
 =======
 >>>>>>> 3e23ce6... published cambios
+=======
+>>>>>>> Eloquent

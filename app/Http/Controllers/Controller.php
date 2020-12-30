@@ -12,9 +12,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public fuction index()
-    
-    	//$users = app\Models\User::withCount(['posts','comments'])->get();
-    	return view('User');
-    }
+
 }

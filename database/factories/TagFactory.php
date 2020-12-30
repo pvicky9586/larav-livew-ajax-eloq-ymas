@@ -13,7 +13,7 @@ class TagFactory extends Factory
      *
      * @var string
      */
-    protected $model = Tag::class;
+    protected $model = \App\Models\Tag::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-         //$title = $this->faker->unique()->word(5);
+        $title = $this->faker->unique()->text(5);
         return [
-            'name' => $this->faker->text(10),
+             'name' => Str::camel($title)
            ];
     }
 }

@@ -14,6 +14,7 @@ class ProfilesSeeder extends Seeder
      */
     public function run()
 <<<<<<< HEAD
+<<<<<<< HEAD
     {
 
     	//DB::table('profiles')->truncate();
@@ -49,5 +50,10 @@ class ProfilesSeeder extends Seeder
         
       //       
 >>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
+=======
+    {       
+        
+      //       
+>>>>>>> Eloquent
     }
 }

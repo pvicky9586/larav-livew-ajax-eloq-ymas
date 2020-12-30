@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -173,6 +174,49 @@
           <a href="{{ url('/post')}}">ver ejemplo</a>   </label>      
           
         </div>
+=======
+@extends('layouts.layout')
+@section('content')
+
+
+
+   <div  align="center">
+        <img src="{{asset('images/Larav-Lavew-Ajax-Eloq.png')}}">
+  </div>
+
+<div style="display: flex;">
+          <img src="{{asset('images/crud.png')}}" class="crud">
+
+  <div style="display: inline-block;">  
+        <div class="group">
+          <h2 class="display-3">Just Laravel</h2> 
+          <label style="font-size: 2rem;"> Cuando necesitamos insertar, editar e incluso hasta eliminar registros de nuestra Base de Datos; no es necesario entonces, conocer y dominar la herramienta que nos podria facilitar este trabajo. orientadonos siempre lo que espe facilidad del cliente <a href="{{ url('/posts')}}">ejemplo</a></label>
+            <h1 align="center" class="text-success">Un medio rapido, practico y seguro</h1>
+                          
+           
+        </div> 
+     
+
+
+
+       <div class="group">
+          <h2 class="display-3">Larave & Livewire</h2> 
+       	 	<label style="font-size: 2rem;">Livewire llega para sorpendernos! en un gigantezco ahorro de tiempo y esfuerzo al consumir una Api. </label><br> <span style="font-size: 1.5rem;"><i><b>Sin mas preambulo!</b> Un Ejemplo de una sencilla, completa y rapida Api. con los mismo datos del crub anterior, pero esta vez! sin recargar la pagina.</i></span>
+          
+          <div>
+            <a href="{{ route('crud_larav-livew')}}">Livewire en laravel</a>  &nbsp;&nbsp;&nbsp;
+            <a href="{{ url('users')}}">Usando Modal <i style="font-size: 1rem; color: black;">> Model User </i></a>  
+
+          </div>	
+       </div>
+
+       <div class="group">
+          <h2 class="display-3">Laravel & Ajax y Ventana Modal</h2>
+          <label style="font-size: 2rem;">Ajax es una de las tecnologias mas rapida y segura en la interaccion con nuestra Base de Datos. <br>Te presentamos un CRUD de registros similar al anterior, pero esta vez enlazando ajax atraves de laravel y seguimos sumando + segurida y dinamismo(al no recargar la pagina)
+          <a href="{{ url('/post')}}">ver ejemplo</a>   </label>      
+          
+        </div>
+>>>>>>> Eloquent
   </div>
 </div>
       
@@ -236,4 +280,7 @@
 
 
 @endsection
+<<<<<<< HEAD
 >>>>>>> 3e23ce6... published cambios
+=======
+>>>>>>> Eloquent

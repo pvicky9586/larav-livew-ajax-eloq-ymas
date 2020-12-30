@@ -14,19 +14,29 @@ class Post extends Model
     	'body',
     	'category_id',
     	'user_id',
-    	'file'
+    	'file',
+        'status',
+        'factory',
+        'created_at',
     ];
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
     
     // un post pertene a un usuario (*)
+=======
+
+    
+
+>>>>>>> Eloquent
     public function user() 
     {
         return $this->belongsTo(User::class);
     }
 
+<<<<<<< HEAD
     // un post tiene muchos comments(N-M)
     public function comments()
     {
@@ -34,10 +44,23 @@ class Post extends Model
     }
 
 
+=======
+    public function category() 
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+
+    public function comments()
+    {
+           return $this->hasMany(Comment::class);
+    }
+>>>>>>> Eloquent
 
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -52,6 +75,12 @@ class Post extends Model
 
 
     
+=======
+    public function tags() //extracion de las todas las tag de un post
+    {
+           return $this->hasMany(PostTag::class);
+    }
+>>>>>>> Eloquent
 
 
 
@@ -61,9 +90,14 @@ class Post extends Model
 
 
 
+<<<<<<< HEAD
   
 
    // $count = Post::where('status', '=', 1)->count();
 
 >>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
+=======
+
+
+>>>>>>> Eloquent
 }

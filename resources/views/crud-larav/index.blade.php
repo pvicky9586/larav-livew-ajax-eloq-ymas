@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('layout')
+=======
+@extends('layouts.layout')
+>>>>>>> Eloquent
 
 @section('content')
     <div class="">

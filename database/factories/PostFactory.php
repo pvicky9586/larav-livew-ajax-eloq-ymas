@@ -24,6 +24,7 @@ class PostFactory extends Factory
     public function definition()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         //$title = $faker->sentence(4);
         return [
            'category_id'=>rand(1,20), //crea id aleatorios
@@ -33,6 +34,8 @@ class PostFactory extends Factory
            'file' => $this->faker->imageUrl($width = 1200, $height = 400),
            'status' => $this->faker->randomElement(['0','1'])
 =======
+=======
+>>>>>>> Eloquent
        
          return [
           'title' => $this->faker->text(20), //20 caracteres
@@ -43,7 +46,10 @@ class PostFactory extends Factory
 
           'category_id'=>rand(1,5), //crea id aleatorios ten en cuenta que sera que no supere la cantidad de registro falso que hallas insertado
           'user_id'=>rand(1,10) //crea id aleatorios
+<<<<<<< HEAD
 >>>>>>> 3e23ce6... published cambios
+=======
+>>>>>>> Eloquent
         ];
     }
 }

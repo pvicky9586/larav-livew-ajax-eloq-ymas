@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    //use HasFactory;
-    protected $fillable = 'name';
+    use HasFactory;
+    
+    protected $fillable = [
+    	'name',
+    	'created_at',
+    	'update_at',
+    ];
 }
