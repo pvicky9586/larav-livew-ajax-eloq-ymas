@@ -16,22 +16,11 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $table->string('abrev')->nullable;
-=======
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
->>>>>>> Eloquent
             $table->timestamps();
-        });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
+  
     public function down()
     {
         Schema::dropIfExists('profiles');

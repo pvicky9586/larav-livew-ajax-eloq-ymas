@@ -10,13 +10,10 @@ class Profession extends Model
     use HasFactory;
 
 
-<<<<<<< HEAD
-  
-=======
    public function users() 
     {
         return $this->hasMany(User::class);
     }
->>>>>>> Eloquent
+
 
 }

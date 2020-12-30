@@ -30,31 +30,7 @@ class CreatePostsTable extends Migration
             ->onDelete('set null');
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $table->string('file')->nullable;
-            $table->string('status')->nullable;
-=======
-            $table->string('file')->nullable();
-            $table->integer('status');
-            $table->integer('factory'); // columna para identificar post public y post factory
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
-            $table->string('file')->nullable();
-            $table->integer('status');
-            $table->integer('factory'); // columna para identificar post public y post factory
->>>>>>> Eloquent
-            $table->timestamps();
 
-
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('posts');

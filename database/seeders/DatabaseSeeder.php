@@ -20,55 +20,30 @@ class DatabaseSeeder extends Seeder
     		'users',
             'profiles',
             'professions',
+            
+            'comments',
     		'posts',
-<<<<<<< HEAD
-<<<<<<< HEAD
-            'categories',
-    		'tags'
-    		
 
-=======
-            'comments',
-            'tags',
-            'categories'
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
-            'comments',
             'category_tags',
             'tags',
             'categories'
->>>>>>> Eloquent
     	]);
 
 	    //$this->call(ProfilesSeeder::class);
         $this->call(ProfessionTableSeeder::class);
 
         $this->call(UsersTableSeeder::class);
-<<<<<<< HEAD
-<<<<<<< HEAD
+        
 	    $this->call(CategoriesTableSeeder::class);
+
 	    $this->call(TagsTableSeeder::class);
+
 	    $this->call(PostsTableSeeder::class);	    
-=======
 
-        $this->call(TagsTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
-=======
-
-        $this->call(TagsTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
         $this->call(CategoryTagSeeder::class); 
->>>>>>> Eloquent
-                
-	    $this->call(PostsTableSeeder::class);	
 
         $this->call(CommentsTableSeeder::class);    
        
-        
-<<<<<<< HEAD
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
->>>>>>> Eloquent
 
 	
     }

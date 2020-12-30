@@ -34,12 +34,6 @@ class User extends Authenticatable
     ];
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-           public function posts()
-=======
-=======
->>>>>>> Eloquent
         public function profession()
         {
             return $this->belongsTo(Profession::class);
@@ -51,17 +45,12 @@ class User extends Authenticatable
             return $this->belongsTo(Profile::class);
         }
 
-        //user tiene muchos posts (*)
+
+
         public function posts()
-<<<<<<< HEAD
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
->>>>>>> Eloquent
         {
             return $this->hasMany(Post::class);
         }
-
-
 
         public function comments()
         {

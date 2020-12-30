@@ -10,23 +10,15 @@ use App\Models\Post;
 class CountComp extends Component
 {
 	
-<<<<<<< HEAD
+
 	public $comments, $posts, $CommentPosts;
-=======
-	public $comments, $posts;
->>>>>>> Eloquent
+
 	function mount(){
 		$comments=Comment::all();
 		$this->comments=$comments;	
 
 		$posts = Post::withCount(['comments'])->get();
 		$this->posts=$posts;
-		//esta funcion solo evalua una consulta x model
-		// $CommentPosts = $posts->comments;
-		// $this->CommentPosts = $CommentPosts;
-		//$this->$PostsComment = $PostsComment;
-
-		
 	}
 
 

@@ -8,12 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Eloquent
-     protected $fillable = [
+
+    protected $fillable = [
     	'comment',
     	'post_id'
     ];
@@ -24,8 +20,5 @@ class Comment extends Model
         return $this->belongsTo(Post::class);
     }
 
-<<<<<<< HEAD
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
->>>>>>> Eloquent
+
 }
