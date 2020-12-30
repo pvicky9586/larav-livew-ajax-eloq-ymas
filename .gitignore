@@ -10,22 +10,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Eloquent
 
+resources/views/Menus
 resources/views/js.blade.php
 resources/views/borrador.js
 resources/views/GUIA.txt
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3e23ce6... published cambios
-=======
->>>>>>> 3e23ce6... published cambios
-=======
->>>>>>> 3e23ce6... published cambios
-=======
->>>>>>> Eloquent
+

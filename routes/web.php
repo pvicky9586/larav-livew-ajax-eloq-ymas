@@ -18,11 +18,6 @@ Route::get('/count', function(){
 
 
 
-// Route::get('/menu', function(){
-// 	return view('Menus.Menu');
-// })->name('menu');
-
-
 Route::get('/search', function(){
 	return view('Search.index');
 })->name('search');
