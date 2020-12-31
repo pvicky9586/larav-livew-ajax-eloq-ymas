@@ -35,6 +35,7 @@
         </div>
   </div>
 </div>
+
       
   <!--Public Post -->
   <div  class="text-center rounded-bottom">

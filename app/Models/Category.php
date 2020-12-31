@@ -12,14 +12,6 @@ class Category extends Model
     	'name',
     	'detall'
     ];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 92a0b79... 1er eloquen view filtado de user-post-comments
-=======
 
     public function posts() 
     {
@@ -30,14 +22,6 @@ class Category extends Model
 
     public function tags() 
     {
-        
-        //tiene muchas etiquetas 
-        //debe ir dirigida a la tabla de categorias_tag
-        //
+       return $this->hasMany(PostTag::class);
     } 
-
-
-
-
->>>>>>> Eloquent
 }
