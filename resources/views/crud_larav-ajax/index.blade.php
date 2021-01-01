@@ -25,7 +25,7 @@
       </tr>
       </thead>
       {{ csrf_field() }}
-      @foreach ($post as $value)
+      @forelse($post as $value)
         <tr class="post{{$value->id}}">
           <td>{{ $value->id}}</td>
           <td>{{ $value->title }}</td>
@@ -43,8 +43,15 @@
               <i class="glyphicon glyphicon-trash"></i>
             </a>
           </td>
+          </tr>
+         @empty
+         <tr>
+          <td></td>
+          <td></td>
+            <td class="text-danger">No hay resultado</td>
         </tr>
-      @endforeach
+               
+        @endforelse
     </table>
   </div>
   {{$post->links()}}

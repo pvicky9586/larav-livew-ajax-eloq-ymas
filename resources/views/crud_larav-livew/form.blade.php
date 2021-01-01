@@ -1,4 +1,4 @@
-<div class="form">    
+<div class="">    
   <div class="">
     <label>Title</label>
     <input type="text" class="form-control form-in text-primary" wire:model="title" placeholder="Enter title" style="font-weight: bold; font-size: 2rem;">    
@@ -12,9 +12,9 @@
     	@endforeach
     </select>
   </div>
-  <div class="form-group">
+  <div class="form-group" align="center">
   	<small class="form-text text-muted">Description</small>
-    <textarea type="password" rows="4"  cols="25" class="" style="width: 100%:" wire:model="body"></textarea>
+    <textarea type="password" rows="4"  cols="25" class="" autocomplete style="width: 100%:" wire:model="body"></textarea>
   </div>
 
   <div class="form-group">

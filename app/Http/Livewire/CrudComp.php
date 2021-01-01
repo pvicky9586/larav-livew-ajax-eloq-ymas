@@ -7,6 +7,8 @@ use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\PostTag;
 
 class CrudComp extends Component
 {
@@ -19,7 +21,7 @@ class CrudComp extends Component
 	public $categorys;
 	public $factory; //valor que determina no factori
 	public $File ='', $filePost='';
-	public $search = '';
+	public $search = '', $message, $error;
 
 
 
@@ -86,14 +88,24 @@ function mount(){
 			'status' => $this->status,
 			//'file' => $File,
 		]); 
-		$this->default(); 
-		return back()->with('mensaje','Datos Actualizados');
+		session()->flash('message','Registro Actualizado con exito!');
+		$this->default();
+
 	}
 
-   public function destroy ($id){
-		Post::destroy($id); 
-		$this->default();  
+  	 public function destroy ($id){
+	   	 $postCom = Comment::where('post_id','=',$id)->first();
+	     $postTag = PostTag::where('post_id','=',$id)->first();
+	      if($postCom || $postTag){
+	         session()->flash('error','Imposible eliminar, consulte al administrador de base de datos');
+	      }else{
+			Post::destroy($id); 
+			session()->flash('message','Registro Eliminado con exito!');
+			$this->default();  
+			}
 	}
+
+
 
 	public function default(){
 		$this->title = '';

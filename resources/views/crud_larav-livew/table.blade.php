@@ -1,12 +1,19 @@
 
    
 
-    @if (session('mensaje'))
+    @if (session('message'))
         <div class="alert alert-success">             
-            <small>{{ session('mensaje') }}  </small>
+            <small>{{ session('message') }}  </small>
         </div>
     @endif
-<div  >
+
+    @if (session('error'))
+        <div class="alert alert-danger">             
+            <small>{{ session('error') }}  </small>
+        </div>
+    @endif
+
+<div>
   <!-- <input type="text" class="search-input"  class="form-control" style=" width: 100%;" wire:model="searchPart"  placeholder="Buscar" >      -->      
    
                       
@@ -20,7 +27,7 @@
     </thead>
     <tbody>
   
-        @foreach ($posts as $post)
+        @forelse ($posts as $post)
             <tr>
                 <td class="display-5 text-center">{{ $post->title }}</td>
                 <td  class="text-muted" style="padding-right: 4%; text-align: justify;"> 
@@ -41,9 +48,12 @@
                 <td>
                     <button class="btn btn-danger" wire:click="destroy({{ $post->id }})">Eliminar
                     </button> 
+
                 </td>
-            </tr>
-        @endforeach
+             @empty
+            <td class="text-danger font text-center">No hay resultados</td>
+        </tr>               
+        @endforelse
     </tbody>
 </table>
     <div style="color:blue;">

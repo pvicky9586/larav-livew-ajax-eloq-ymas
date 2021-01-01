@@ -15,7 +15,7 @@
     <h1 align="center" class="display-2">{{ $post->title }}</h1>
     <div class="container">                     
             <div class="form-group">
-                <strong >body: <small>{{ $post->body }}</small></strong>
+                <strong >Body: <small>{{ $post->body }}</small></strong>
             </div>
             <div class="form-group">
                 <strong>Created in:</strong>
@@ -24,16 +24,16 @@
             
             <div align="center">
               @if($post->factory == 1)       
-                <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible aun"> 
+                <img src="{{$post->file}}" width="300" height="250" alt="Imagen no disponible aun"> 
               @else             
-                 <img src="{{ Storage::url("$post->file")}}" width="150" height="190">           
+                 <img src="{{ Storage::url("$post->file")}}" width="300" height="250" alt="Imagen no disponible">           
               @endif
             </div>
             <div class="form-group">
                  @if ($post->status === 1)
-                    <strong class="text-success display-3"> Publicado</strong>
+                    <strong class="text-success display-3"> Published</strong>
                 @else
-                    <strong class="text-danger display-6">Post No publicado</strong>
+                    <strong class="text-danger display-6">Post Not published</strong>
                 @endif
             </div>
         

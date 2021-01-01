@@ -3,6 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
+
+
+
+
+
+Route::get('/bb', function(){
+  return view('bootbox');
+});
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('inicio');

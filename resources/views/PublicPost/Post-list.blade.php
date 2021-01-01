@@ -19,7 +19,7 @@
 		</div>		
 	</div>
 
-	<div  class="public-Ah"style=""> Ahora disponibles 	</div>
+	<div  class="public-Ah text-center"style=""> Ahora disponibles 	</div>
 
 	@forelse ($posts as $post)
 	
@@ -76,7 +76,7 @@
 					      
 			</div><br>   
 	@empty
-	     <h1>No hay resultados</h1>  
+	     <h1 class="text-danger text-center">No hay resultados</h1>  
 	@endforelse
 	<div> {{ $posts->links() }}</div>
 

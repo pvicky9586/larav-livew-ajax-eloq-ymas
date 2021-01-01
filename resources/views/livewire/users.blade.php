@@ -35,7 +35,7 @@
 
         <tbody>
 
-            @foreach($users as $value)
+            @forelse($users as $value)
 
             <tr>
 
@@ -52,11 +52,10 @@
                 <button wire:click="delete({{ $value->id }})" class="btn btn-danger btn-sm">Delete</button>
 
                 </td>
-
-            </tr>
-
-            @endforeach
-
+                @empty
+                 <td class="text-danger font text-center">No hay resultados</td>
+            </tr>            
+        @endforelse
         </tbody>
 
     </table>

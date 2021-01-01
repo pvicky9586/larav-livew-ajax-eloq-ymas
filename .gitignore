@@ -14,4 +14,4 @@ yarn-error.log
 resources/views/Menus
 resources/views/borrador.js
 resources/views/GUIA.txt
-resources/views/js.blade.php
+resources/views/bootbox.blade.php

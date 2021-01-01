@@ -25,12 +25,12 @@
 <body>
     <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
         <div class="">
-           <div class="p-1 mb-4 bg-gradient-success display-4 text-warning">
+           <h2 class="p-3 mb-2 bg-gradient-success display-3 text-warning">
               Laravel - Livewire - AJAX & Eloquent
-            </div> 
+            </h2> 
             <div style="margin:0;"> 
               <span class="glyphicon glyphicon-home">   
-                <a class="font text-warning Muted link" href="{{ route('inicio')}}">home</a> 
+                <a class="font text-danger" href="{{ route('inicio')}}">home</a> 
               </span>
             </div>
         </div>
@@ -67,6 +67,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
+
+   <script src="{{ asset('js/alert.js') }}"> </script>
 
 
 

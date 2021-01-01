@@ -47,12 +47,12 @@ input[type="checkbox"].tag:checked + label { color: #30921c; font-size: 1.5rem;}
 .table-borde{border:solid 1px; border-color:  #a1a0a4 }
 .tag{font-weight: bold; font-size: 1.5rem;}
 
-.crud{width: 12%; height:auto;}
+.crud-img{width: 12%; height:auto;}
 .actions-td { white-space: nowrap; width: 1px; }
 .group{border-style: inset; border-color: #c0c0c0; padding: 1%; height: auto;  margin-top:2%; margin-left:1%;  text-align: justify; }
 .search{padding: 2%; color: #B0DFDC; width: 20%; }
 .public-Ah{background: blue; color: #fff; padding: 2%; font-weight: bold; font-size: 2rem;}
-
+.delete{border: none; background-color:transparent;}
 
 
 input[type="file"] {
