@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scopes</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <!-- CDN Bootstrap -->
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
     <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
   </head>
 <body>
 
 
-<nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
+<nav  class="navPers navbar navbar-ststic-top bg-viol" role="navigation">  
         <div class="">
            <h2 class="p-3 mb-2 bg-gradient-success display-5 text-write">
               Laravel - Livewire - AJAX & Eloquent
             </h2> 
             <div style="margin:0;"> 
               <span class="">                 
-                <a class="text-wite h4" href="{{ route('inicio')}}"><img src="https://image.flaticon.com/icons/png/512/15/15766.png" width="40">Home</a> 
+                <a class="text-warning h4" href="{{ route('inicio')}}"><img src="{{asset('images/icons/home.png')}}" alt="  " width="40">Home</a> 
               </span>
             </div>
         </div>
@@ -35,7 +35,7 @@
   </div>
    
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
 
 <script type="text/javascript">
@@ -164,6 +164,10 @@ function closeModal(){
 }
 
 </script>
+<!-- 
+<script src="{{ asset('js/larav_ajax.js') }}" defer></script> -->
+
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 
 </body>

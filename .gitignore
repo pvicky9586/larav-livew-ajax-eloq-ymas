@@ -15,5 +15,7 @@ resources/views/Menus
 resources/views/borrador.js
 resources/views/GUIA.txt
 resources/views/bootbox.blade.php
+resources/views/layouts/layout2.blade.php
 
-resources/views/latouts/layout2.blade.php
+/public/js/larav_ajax.js
+resources/views/crud_larav_ajax/index2.blade.php

@@ -10,14 +10,15 @@
         <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
     </head>
 <body>
-    <nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
+    <nav  class="navPers navbar navbar-ststic-top bg-viol" role="navigation">  
         <div class="">
-           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-warning">
+           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-write">
               Laravel - Livewire - AJAX & Eloquent
             </h2> 
             <div style="margin:0;"> 
               <span class="">                 
-                <a class="text-danger h4" href="{{ route('inicio')}}"><img src="https://image.flaticon.com/icons/png/512/15/15766.png" width="40">Home</a> 
+                <a class="text-warning h4" href="{{ route('inicio')}}">
+                  <img src="{{asset('images/icons/home.png')}}" width="40" alt="  ">Home</a> 
               </span>
             </div>
         </div>
@@ -58,7 +59,7 @@
 
    <script src="{{ asset('js/alert.js') }}"> </script>
 
-     <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
 
 
 

@@ -306,6 +306,9 @@ input[type=checkbox] {
   box-sizing: border-box;
   padding: 0;
 }
+input[type="file"] {
+    color: transparent;
+}
 
 textarea {
   overflow: auto;
@@ -443,6 +446,11 @@ h6,
 
 .display-4 {
   font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.display-5 {
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -2760,6 +2768,7 @@ fieldset:disabled a.btn {
   border-color: #2d995b;
 }
 
+
 .btn-success:focus,
 .btn-success.focus {
   color: #fff;
@@ -2786,6 +2795,46 @@ fieldset:disabled a.btn {
 .btn-success:not(:disabled):not(.disabled):active:focus,
 .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(86, 202, 135, 0.5);
+}
+
+.btn-viol {
+  color: #fff;
+  background-color: #6710dc;
+  border-color:  #39136e;
+}
+
+.btn-viol:hover {
+  color: #fff;
+  background-color:  #823de0;
+  border-color:  #39136e;
+}
+.btn-viol:focus,
+.btn-viol.focus {
+  color: #fff;
+  background-color: #2fa360;
+  border-color: #2d995b;
+  box-shadow: 0 0 0 0.2rem rgba(86, 202, 135, 0.5);
+}
+
+.btn-viol.disabled,
+.btn-viol:disabled {
+  color: #fff;
+  background-color: #38c172;
+  border-color: #38c172;
+}
+
+.btn-viol:not(:disabled):not(.disabled):active,
+.btn-viol:not(:disabled):not(.disabled).active,
+.show > .btn-viol.dropdown-toggle {
+  color: #fff;
+  background-color: #2d995b;
+  border-color: #2a9055;
+}
+
+.btn-viol:not(:disabled):not(.disabled):active:focus,
+.btn-viol:not(:disabled):not(.disabled).active:focus,
+.show > .btn-viol.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(86, 202, 135, 0.5);
 }
 
@@ -6164,9 +6213,9 @@ a.close.disabled {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1200;
   display: none;
-  width: 100%;
+  width: 80%;
   height: 100%;
   overflow: hidden;
   outline: 0;
@@ -6956,6 +7005,9 @@ a.close.disabled {
 
 .bg-primary {
   background-color: #3490dc !important;
+}
+.bg-viol {
+  background-color:  #b288ea  !important;
 }
 
 a.bg-primary:hover,
@@ -10634,6 +10686,9 @@ button.bg-dark:focus {
   }
 }
 
+.text-bold{
+  font-weight: bold;
+}
 @media (min-width: 1200px) {
   .text-xl-left {
     text-align: left !important;
@@ -10688,6 +10743,12 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-viol {
+  color:  #571671  !important;
+}
+.text-blue{
+  color:  #182ee3 !important;
+}
 .text-primary {
   color: #3490dc !important;
 }

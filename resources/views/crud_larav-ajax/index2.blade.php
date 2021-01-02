@@ -1,11 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="">
-   <img src="{{asset('images/ajax.png')}}" width="400" height="100">        
-</div>    
 <div class="container">
   <div class="col-md-12">
-    <h1 style="margin-top: 5%;" class="display-4 text-center">CRUD  con Ajax</h1>
+    <h1 style="margin-top: 10%;" class="display-4 text-center">CRUD  con Ajax</h1>
   </div>
 </div>
 
@@ -42,7 +39,7 @@
                 }                   
             ?>
         </td>
-          <td class="actions-td h5 text-primary">
+          <td class="actions-td h5">
             @if ($value->created_at)
                 {{ date_format($value->created_at, 'j M Y') }}
             @endif
@@ -92,7 +89,7 @@
 
       <div class="modal-body">
         <form class="form-horizontal" role="form" action="{{ route('post.store')}}" method="POST">
-          {{ csrf_field() }}
+        	{{ csrf_field() }}
          
 
           <div class="form-group row add">
@@ -190,21 +187,25 @@
         </form>
 
 
-    {{-- Form Delete Post --}}
+		{{-- Form Delete Post --}}
   <div class="deleteContent">
       ¿Estás seguro de que quieres eliminar?<br>
-     <!--  <span class="title"></span>
-      <span class="hidden id"></span> -->
+      <span class="title"></span>?
+      <span class="hidden id"></span>
   </div>
   </div>
     <div class="modal-footer">
       <button type="button" class="btn actionBtn" data-dismiss="modal">
         <span id="footer_action_button" class="glyphicon"></span>
       </button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">
+          close
+      </button>
     </div>
   </div>
   </div>
 </div>
+
 
 @endsection
 

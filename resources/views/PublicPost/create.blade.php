@@ -11,7 +11,7 @@
       <div class="modal-header">
          <h5 class="display-3 text-primary" id="exampleModalLabel">Crear Publicacion</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true close-btn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe71zuOpu-Ukml7XcfmOMHQR7wroVgKjodDA&usqp=CAU" width="50"></span>
+           <span aria-hidden="true close-btn"><img src="{{asset('images/icons/close.png')}}" width="50"></span>
         </button>
       </div>
 
