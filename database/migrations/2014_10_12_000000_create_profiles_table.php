@@ -17,10 +17,10 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
+          });
     }
 
 
-  
     public function down()
     {
         Schema::dropIfExists('profiles');

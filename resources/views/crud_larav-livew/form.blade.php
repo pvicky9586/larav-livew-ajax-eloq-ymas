@@ -24,8 +24,8 @@
   </div>
 
   <div class="form-group">
-        <label>Imagen</label>
-        <input type="file" wire:model="file"  accept="image/*">
+        <label>Adjuntar Imagen</label>
+        <input type="file" wire:model="file"  accept="image/*" class="">
    </div>
    <!-- escuchar evento de abjuntar imagen para update -->
    <div>
@@ -34,9 +34,8 @@
     @elseif($factory == 1)
 		 <img src="{{$filePost}}" width="150" height="190" alt="Imagen no disponible"> 
   	@else	  	    	
-  		 <img src="{{ Storage::url("$filePost")}}" width="150" height="190" alt=" abjuntar imagen"> 	        
+  		 <img src="{{ Storage::url("$filePost")}}" width="150" height="190" alt=" "> 	        
   	@endif
     
    </div>
 </div>
-

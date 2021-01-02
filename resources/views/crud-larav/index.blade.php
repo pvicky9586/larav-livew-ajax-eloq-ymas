@@ -18,21 +18,20 @@
             <span >{{ $message }}</span>
         </div>
     @endif
-
     <table class="table  table-borde">
-       <thead class="bg-primary">
-       <tr align="center">
+       <thead class="bg-primary h4 ">
+       <tr align="center ">
         <th >Title</th>
         <th>Body</th>
         <th scope="col">Created</th>
-        <th width="180px">Action</th>
+        <th colspan="3">Action</th>
         </tr>
         </thead>
         
         <tbody>
         @forelse ($posts as $post)
         <tr>
-        <td  align="center" class="display-4 actions-td">{{ $post->title }}</td>
+        <td  align="center" class="display-5 actions-td"><strong>{{ $post->title }}</strong></td>
         <td  class="text-muted" style="padding-right: 4%; text-align: center;"> 
             <?php $tam = strlen($post->body); 
                 if ($tam <= 80){
@@ -77,7 +76,9 @@
         </tbody>
     </table>
 
-    {!! $posts->links() !!}
+    <div class="d-flex justify-content-center">
+        {!! $posts->links() !!}
+    </div>
 
 @endsection
 

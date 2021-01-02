@@ -15,15 +15,14 @@
 <body>
 
 
-  <nav  class="navbar navbar-ststic-top bg-primary" role="navigation">  
-        <div class="" style="text-align: center; color:  #ffd433;">
-           <h2 class="">
+<nav  class="navPers navbar navbar-ststic-top bg-primary" role="navigation">  
+        <div class="">
+           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-write">
               Laravel - Livewire - AJAX & Eloquent
-            </h2>
-                 
-            <div style=""> 
-              <span class="glyphicon glyphicon-home">   
-                <a style="color: #ff6b33; font-weight: bold;" class="" href="{{ route('inicio')}}">Home</a> 
+            </h2> 
+            <div style="margin:0;"> 
+              <span class="">                 
+                <a class="text-wite h4" href="{{ route('inicio')}}"><img src="https://image.flaticon.com/icons/png/512/15/15766.png" width="40">Home</a> 
               </span>
             </div>
         </div>

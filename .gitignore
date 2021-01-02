@@ -15,3 +15,5 @@ resources/views/Menus
 resources/views/borrador.js
 resources/views/GUIA.txt
 resources/views/bootbox.blade.php
+
+resources/views/latouts/layout2.blade.php

@@ -20,11 +20,11 @@ class CreateCategoryTagsTable extends Migration
             $table->unsignedBigInteger('tag_id')->nullable();
             
             $table->foreign('category_id')->references('id')->on('categories')
-            ->onDelete('set null')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
 
             $table->foreign('tag_id')->references('id')->on('tags')
-            ->onDelete('set null')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             
             $table->timestamps();

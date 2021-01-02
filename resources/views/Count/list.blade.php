@@ -66,19 +66,19 @@
 
 
 <div class="" style="margin-top: 3%;"> 
-	<h1 class="display-3 text-center" >Ver Comentarios</h1>
+	<h1 class="display-5" >Ver Comentarios</h1>
 
 	  	@foreach($allposts as $post)	
 		       		 	
 		    @foreach($comments as $comment)	 
 		       	@if ($post->id == $comment->post_id)
 		       	<div class="border border-secondary">
-			   		<h1 class="display-3">{{$post->title}}</h1>	
+			   		<h1 class="display-5 text-success text-center">{{$post->title}}</h1>	
 			   		
 			   		<p class="h5 text-danger">Comentarios mas recientes:</p>
 			   		@foreach($comments as $comment)
 		    			@if ($post->id == $comment->post_id)
-		    				 <small class=""> {{$comment->comment}}</span><br>
+		    				 <small class="h4 text-mute"> {{$comment->comment}}</span><br>
 		    			@endif
 					@endforeach
 				</div>

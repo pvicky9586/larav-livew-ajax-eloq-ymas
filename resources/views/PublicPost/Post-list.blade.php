@@ -19,7 +19,8 @@
 		</div>		
 	</div>
 
-	<div  class="public-Ah text-center"style=""> Ahora disponibles 	</div>
+	<div  align="left" style="background:  #4c0780; color:#fff; padding: 0.5%; font-size: 2rem;"> Ahora disponibles</div>
+	<br>
 
 	@forelse ($posts as $post)
 	
@@ -34,7 +35,7 @@
 		       
 		        <div style="display: block; padding-left: 2%;" >
 		        	<div>
-		        		 <h1 align="center" class="display-4 text-success text-uppercase">
+		        		 <h1 align="center" class="display-6 text-success text-uppercase">
 		        		 	{{$post->title}}
 		        		 </h1>
 		        	</div>
@@ -78,7 +79,10 @@
 	@empty
 	     <h1 class="text-danger text-center">No hay resultados</h1>  
 	@endforelse
-	<div> {{ $posts->links() }}</div>
+	
+    <div class="d-flex justify-content-center">
+        {!! $posts->links() !!}
+    </div>
 
 
 

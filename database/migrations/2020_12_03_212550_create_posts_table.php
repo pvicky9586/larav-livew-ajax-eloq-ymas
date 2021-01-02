@@ -29,6 +29,13 @@ class CreatePostsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
+            $table->string('file')->nullable();
+            $table->integer('status');
+            $table->integer('factory'); // columna para identificar post public y post factory
+
+            $table->timestamps();
+        });
+    }
 
 
     public function down()

@@ -14,12 +14,10 @@ class CategoryFactory extends Factory
   
     public function definition()
     {
-        //$title = $this->faker->unique()->text(5);
+        $title = $this->faker->unique()->text(8);
         return [
 
             'name' => $title,
-            'slug' => Str::camel($title),
-            'body' => $this->faker->paragraph,
         ];
 
         //Str::camel -> //quita espacio y convierte primera primera letra de palabra siguiente en mayuscula

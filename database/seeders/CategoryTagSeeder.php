@@ -18,3 +18,4 @@ class CategoryTagSeeder extends Seeder
         \App\Models\CategoryTag::factory()->count(40)->create();
     }
 }
+//relacion categories y tags

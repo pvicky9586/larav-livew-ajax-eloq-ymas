@@ -15,7 +15,7 @@
         </button>
       </div>
 
-    <div class="modal-body" style="">
+    <div class="modal-body" style="" align="left">
         <form enctype="multipart/form-data">
 
           <div class="form-group">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group">
-                @error('category_id') <span class="text-danger error">*</span>@enderror<label style="font-size:2rem;">Categoria: </label>
+                @error('category_id') <span class="text-danger error cat">*</span>@enderror<label style="font-size:2rem;">Categoria: </label>
                 <select wire:model="category_id">
                    <option value="">Seleccione</option>
                   @foreach($categorys as $category)
@@ -35,12 +35,12 @@
                 </select>                 
             </div>
         
-            <div>
+            <div align="center">
                 <label class="tag">Etiquetas:
                 <div align="center" style="margin-left: 5%; width: 90%; display: inline-flex;">
                   <div>
                   @foreach($tags as $index=>$tag)   
-                    <input type="checkbox" wire:model="tag_id" class="tag" id="tag" value="{{$tag->id}}"><label>{{$tag->name}}</label>&nbsp;&nbsp;
+                  <input type="checkbox" wire:model="tag_id"  id="tag" value="{{$tag->id}}"><label class="tag" style="">{{$tag->name}}</label>  &nbsp;&nbsp;
                   @endforeach
                   </div>
                   @error('tag_id') <span class="text-danger error">Indique almenos una etiqueta para el post</span>@enderror</label>
@@ -76,14 +76,31 @@
             </div>
       </form>
 
+
+
+
+<style type="text/css">
+
+/* Etiquetas para entradas marcadas */
+input:checked + label {
+  color:  #409009;
+}
+
+
+/* Elemento Checkbox, cuando está marcado */
+input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 3px hotpink;
+}
+
+</style>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
         <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal btn-lg">Save changes</button>
       </div>
                
     </div>
-
-        
+     
 
 </div>
 </div>

@@ -17,7 +17,7 @@ class CategoryTagFactory extends Factory
         return [        
             
             'category_id'=>rand(1,5),
-            'tag_id'=>rand(1,20), //de 50 tag tomorè solo 20
+            'tag_id'=>rand(1,10), //solo 10 tag para la relaciontomorè solo 20
            ];
 
     }
