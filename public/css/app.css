@@ -2138,6 +2138,14 @@ pre code {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.form-control2 {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2326,6 +2334,9 @@ textarea.form-control {
   margin-right: 0.3125rem;
   margin-left: 0;
 }
+
+.top{margin-top: 5%;}
+
 
 .valid-feedback {
   display: none;
@@ -2561,6 +2572,9 @@ textarea.form-control.is-invalid {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+}
+.flex {
+  display: flex;
 }
 
 .form-inline .form-check {
@@ -7005,6 +7019,9 @@ a.close.disabled {
 
 .bg-primary {
   background-color: #3490dc !important;
+}
+.bg-cle  {
+  background-color:  #dedbd2  !important;
 }
 .bg-viol {
   background-color:  #b288ea  !important;

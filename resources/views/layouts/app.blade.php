@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scopes</title>
 
-    <!-- CDN Bootstrap -->
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
   </head>
 <body>
 
-
-<nav  class="navPers navbar navbar-ststic-top bg-viol" role="navigation">  
-        <div class="">
-           <h2 class="p-3 mb-2 bg-gradient-success display-5 text-write">
+  <!-- CON BOOTSTRAP 3 -->
+  <nav  class="navbar navbar-ststic-top bg-cle" role="navigation">  
+        <div class="" style="text-align: center; color:  #ffd433;">
+           <h2 class="">
               Laravel - Livewire - AJAX & Eloquent
-            </h2> 
-            <div style="margin:0;"> 
+            </h2>
+                 
+            <div style=""> 
               <span class="">                 
-                <a class="text-warning h4" href="{{ route('inicio')}}"><img src="{{asset('images/icons/home.png')}}" alt="  " width="40">Home</a> 
+                <a class="text-bold link-info h4" href="{{ route('inicio')}}">
+                  <img src="{{asset('images/icons/home.png')}}" width="40" alt="  ">Home</a> 
               </span>
             </div>
         </div>
@@ -34,8 +36,9 @@
        @yield('content')
   </div>
    
+  <!-- CDN .js Bootstrap 3.3.5 & jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 <script type="text/javascript">
@@ -43,7 +46,7 @@
   $(document).on('click','.create-modal', function() {
     $('#create').modal('show');
     $('.form-horizontal').show();
-    $('.modal-title').text('New Post');
+    $('.modal-title').text('Añadir New Post');
   });
   $("#add").click(function() {
     $.ajax({
@@ -64,11 +67,11 @@
           //insert regist en table sin recargar pagina
           $('.error').remove();
           $('#table').append("<tr class='post" + data.id + "'>"+
-          "<td>" + data.id + "</td>"+
+          // "<td>" + data.id + "</td>"+
           "<td>" + data.title + "</td>"+
           "<td>" + data.body + "</td>"+
-          "<td>" + data.file + "</td>"+
-          "<td><button class='show-modal btn btn-info btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='fa fa-eye'></span></button> <button class='edit-modal btn btn-warning btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='glyphicon glyphicon-pencil'></span></button> <button class='delete-modal btn btn-danger btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='glyphicon glyphicon-trash'></span></button></td>"+
+          // "<td>" + data.file + "</td>"+
+          "<td><button class='show-modal btn btn-info btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='fa fa-eye'></span></button> <button class='edit-modal btn btn-warning btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'></span></button> <button class='delete-modal btn btn-danger btn-sm' data-id='" + data.id + "' data-title='" + data.title + "' data-body='" + data.body + "'><span class='glyphicon glyphicon-trash'></span></button></td>"+
           "</tr>");
         }
       },
@@ -106,8 +109,9 @@ $('.modal-footer').on('click', '.edit', function() {
     },
 success: function(data) {
       $('.post' + data.id).replaceWith(" "+
+         "<tr class='post '>"+
       "<tr class='post" + data.id + "'>"+
-      "<td>" + data.id + "</td>"+
+      // "<td>" + data.id + "</td>"+
       "<td>" + data.title + "</td>"+
       "<td>" + data.body + "</td>"+
       "<td>" + data.created_at + "</td>"+
@@ -164,10 +168,6 @@ function closeModal(){
 }
 
 </script>
-<!-- 
-<script src="{{ asset('js/larav_ajax.js') }}" defer></script> -->
-
-<script src="{{ asset('js/app.js') }}" defer></script>
 
 
 </body>

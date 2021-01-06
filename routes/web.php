@@ -43,6 +43,8 @@ Route::get('/Public', function(){
 //CRUD solo laravel view crud_laravel
 Route::resource('posts', PostLaravController::class);
 
+
+
 //CRUD livewire view larav-livew
 Route::get('/crud_larav-livew', function(){
   return view('crud_larav-livew.index');
@@ -66,3 +68,6 @@ Route::view('users','crud_larav-livew.crud-modal.home');
   // Route::POST('editPost','PostController@editPost');
   // Route::POST('deletePost','PostController@deletePost');
 //});
+
+ Route::get('/comentar/{id}', 'CommentController@index')->name('comments');
+ Route::post('comments', 'CommentController@store')->name('store');

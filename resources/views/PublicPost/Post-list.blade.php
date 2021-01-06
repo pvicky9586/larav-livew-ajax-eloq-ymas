@@ -1,10 +1,10 @@
 <h1 style="color: blue; margin-top: 10%; margin:2%;"  align="center" class="display-2">Publicaciones</h1>
 
 	@if (session('mensaje'))
-	        <div class="alert alert-success">             
-	            <small>{{ session('mensaje') }}  </small>
-	        </div>
-	    @endif
+	   <div class="alert alert-success">             
+	       <small>{{ session('mensaje') }}  </small>
+	    </div>
+	@endif
 
 
 	<div style="">
@@ -22,17 +22,17 @@
 	<div  align="left" style="background:  #4c0780; color:#fff; padding: 0.5%; font-size: 2rem;"> Ahora disponibles</div>
 	<br>
 
-	@forelse ($posts as $post)
+	@forelse ($posts as $index=>$post)
 	
 			<div style="display: flex; margin-top: 1%;" class="">
 				<div>
 			   	  @if($post->factory == 1)
-			        <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible aun"> 
+			        <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible"> 
 			      @else	  	    	
-			    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190"> 	        
+			    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190" alt="Imagen no disponible"> 	        
 		          @endif
 		        </div>
-		       
+		      
 		        <div style="display: block; padding-left: 2%;" >
 		        	<div>
 		        		 <h1 align="center" class="display-6 text-success text-uppercase">
@@ -49,24 +49,14 @@
 								}	        		
 					          ?>
 					</div>
-			     	<div>
-			     	    <details>
-							<summary style="font-weight: bold; color: red;"><b class="text-danger h4"><i>comentarios</i></b></summary>
-							<?php $var = Count($post->comments); ?>
-							@if ($var>0)
-								<!-- <h1> {{ $post->comments }}</h1>	 -->				 
-							   	@foreach($comments as $comment)
-						    	    @if($post->id == $comment->post_id)
-						    		  <small class=""> {{$comment->comment}}</small><br>
-					    			@endif
-								@endforeach
-							@else
-								<small>no comment</small>
-    						@endif									
-						</details>	
-					</div>
-			     	<div>
-			     	    <small style="position: absolute;" class="text-primary">
+			 	
+				<div>   				    									       
+					<a href="{{route('comments', $post->id) }}" class="btn btn-primary btn-lg">Comentar Post</a>
+				</div>
+
+
+					<div align="center">	<!-- class="toast hide" -->					
+			     	    <small style="position: absolute;" class="text-primary ">
 			        		@if($post->created_at)
 			        			publicado: {{ date_format($post->created_at, 'j M Y') }}
 			        		@endif
@@ -74,8 +64,9 @@
     		         </div>
 			      	
 		        </div>
-					      
-			</div><br>   
+
+
+			</div> 
 	@empty
 	     <h1 class="text-danger text-center">No hay resultados</h1>  
 	@endforelse
@@ -83,7 +74,6 @@
     <div class="d-flex justify-content-center">
         {!! $posts->links() !!}
     </div>
-
 
 
 

@@ -34,13 +34,14 @@
                   @endforeach
                 </select>                 
             </div>
-        
+        {{$category_id}}
             <div align="center">
                 <label class="tag">Etiquetas:
                 <div align="center" style="margin-left: 5%; width: 90%; display: inline-flex;">
                   <div>
                   @foreach($tags as $index=>$tag)   
-                  <input type="checkbox" wire:model="tag_id"  id="tag" value="{{$tag->id}}"><label class="tag" style="">{{$tag->name}}</label>  &nbsp;&nbsp;
+                    <input type="checkbox" wire:model="tag_id"  id="tag" value="{{$tag->id}}">
+                      <label class="tag" style="">{{$tag->name}}</label>  &nbsp;&nbsp;
                   @endforeach
                   </div>
                   @error('tag_id') <span class="text-danger error">Indique almenos una etiqueta para el post</span>@enderror</label>
@@ -79,7 +80,7 @@
 
 
 
-<style type="text/css">
+<!-- <style type="text/css">
 
 /* Etiquetas para entradas marcadas */
 input:checked + label {
@@ -92,7 +93,7 @@ input[type="checkbox"]:checked {
   box-shadow: 0 0 0 3px hotpink;
 }
 
-</style>
+</style> -->
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>

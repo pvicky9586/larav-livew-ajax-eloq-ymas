@@ -27,6 +27,8 @@ class PostPublicComp extends Component
 	public $factory = 0;
 	public $File='';
 	public $post, $mensaje,  $comments, $commentsPost;
+	//public $comentar,  $post_id=[];
+	//public $name, $email;
 	public $updateMode = false;
 	public $search = '';
 	
@@ -42,9 +44,7 @@ class PostPublicComp extends Component
     	$this->comments=$comments;
 
 		$commentsPost = Post::withCount(['comments'])->get();		
-    	$this->commentsPost=$commentsPost; // pasar name comment
-
-
+    	$this->commentsPost=$commentsPost;
 	}	
 
 
@@ -53,14 +53,13 @@ class PostPublicComp extends Component
 
     public function render()
     {	    		
-
-    	  return view('livewire.post-public-comp',[
-			'posts'=> Post::where(function($sub_query)
-			{
-				$sub_query->where('body','like', '%'.$this->search.'%')
-				->orWhere('title','like', '%'.$this->search.'%');
-				})->where('status','=',1)->orderBy('id','desc')->paginate(5) 
-			]);
+   	  return view('livewire.post-public-comp',[
+		'posts'=> Post::where(function($sub_query)
+		{
+			$sub_query->where('body','like', '%'.$this->search.'%')
+			->orWhere('title','like', '%'.$this->search.'%');
+			})->where('status','=',1)->orderBy('id','desc')->paginate(5) 
+		]);
     }
 
 
@@ -72,7 +71,7 @@ class PostPublicComp extends Component
 
 
 
-  public function store() {
+   public function store() {
         $validatedDate = $this->validate([
               'title' => 'required',
               'body' => 'required',
@@ -96,7 +95,7 @@ class PostPublicComp extends Component
 			 'factory' => $this->factory,
 		]);
 
-		$Ntag= Count($this->tag_id);
+		$Ntag = Count($this->tag_id);
         for($i=0; $i<$Ntag; $i++){
 			$save->tags()->create([
 				'post_id'=>$save->id,
@@ -105,14 +104,30 @@ class PostPublicComp extends Component
 		}
 		$this->default();
 		$this->emit('postStore'); // Close model to using to jquery
-		return back()->with('mensaje','Datos Registrados');
-			  		
+		return back()->with('mensaje','Datos Registrados');			  		
 	}
 
 
+	public function savecomment($id){
+		$NewCom = Comment::create([
+			'name' => $this->name,
+			'email' => $this->email,
+			'comment' => $this->comentar,
+			'post_id' => $id,
+		 ]);
+		$this->clearComment();
+		return back();	
+
+	}
 	
 
+	public function clearComment(){
 
+		$this->name='';
+		$this->email='';
+		$this->comentar='';
+
+	}
 
 
 	public function default(){
@@ -121,6 +136,7 @@ class PostPublicComp extends Component
 		$this->file = '';
 		$this->category_id = '';
 		$this->status = '';
+		
 		 
 	}
 

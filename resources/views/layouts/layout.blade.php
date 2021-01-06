@@ -10,14 +10,14 @@
         <link href="{{ asset('MyStyles.css') }}" rel="stylesheet">
     </head>
 <body>
-    <nav  class="navPers navbar navbar-ststic-top bg-viol" role="navigation">  
+    <nav  class="navPers navbar navbar-ststic-top bg-cle" role="navigation">  
         <div class="">
            <h2 class="p-3 mb-2 bg-gradient-success display-5 text-write">
               Laravel - Livewire - AJAX & Eloquent
             </h2> 
-            <div style="margin:0;"> 
+            <div> 
               <span class="">                 
-                <a class="text-warning h4" href="{{ route('inicio')}}">
+                <a class="text-bold link-info h4" href="{{ route('inicio')}}">
                   <img src="{{asset('images/icons/home.png')}}" width="40" alt="  ">Home</a> 
               </span>
             </div>

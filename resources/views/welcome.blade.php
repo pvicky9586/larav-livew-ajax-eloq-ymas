@@ -6,7 +6,6 @@
   <div  align="center">
         <img src="{{asset('images/Larav-Lavew-Ajax-Eloq.png')}}" width="1000">
   </div>
-<button class="btn btn-viol">guardar</button>
 <div style="display: flex;">
         <img src="{{asset('images/crud.png')}}" class="crud-img" width="180">
 

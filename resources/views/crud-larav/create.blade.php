@@ -7,9 +7,9 @@
                 <h2> Nuevo Post</h2>
             </div>
                 <div class="pull-right">
-                <a  href="{{ route('posts.index') }}" title="Go back"> 
-                <img src="https://www.vippng.com/png/detail/158-1586228_iconos-png-gratis-resume-volver-icono-descarga-gratuita.png"> </a>
-            </div>
+                    <a  href="{{ route('posts.index') }}" title="Go back"> 
+                    <img src="{{asset('images/icobs/back.png')}}.png"> </a>
+                </div>
         </div>
     </div>
 
