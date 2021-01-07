@@ -15,8 +15,10 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-          'comment' => $this->faker->text(100),  //100 caracteres
-          'post_id'=>rand(1,20) //crea id aleatorios
+         'name' => $this->faker->name, 
+         'email' => $this->faker->SafeEmail, 
+         'comment' => $this->faker->text(100),  //100 caracteres
+         'post_id'=>rand(1,20) //crea id aleatorios
         ];
     }
 }

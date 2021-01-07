@@ -20,26 +20,24 @@
 	</div>
 
 	<div  align="left" style="background:  #4c0780; color:#fff; padding: 0.5%; font-size: 2rem;"> Ahora disponibles</div>
-	<br>
-
 	@forelse ($posts as $index=>$post)
-	
-			<div style="display: flex; margin-top: 1%;" class="">
+	<!-- border-top: 2px solid #aea6a4; -->
+			<div class="flex" style="border-style: inset; border-color:  #aea6a4; border-left: 0; border-radius: 2%; border-right: 0;">
 				<div>
 			   	  @if($post->factory == 1)
-			        <img src="{{$post->file}}" width="150" height="190" alt="Imagen no disponible"> 
+			        <img src="{{$post->file}}" width="150" style="height: 100%;"> 
 			      @else	  	    	
-			    	<img src="{{ Storage::url("$post->file")}}" width="150" height="190" alt="Imagen no disponible"> 	        
+			    	<img src="{{ Storage::url("$post->file")}}" width="150" style="height: 100%;">      
 		          @endif
 		        </div>
 		      
-		        <div style="display: block; padding-left: 2%;" >
+		        <div class="" style="display: block; padding-left: 2%; text-align-last: center; margin-top: 2; ">
+		        	
 		        	<div>
-		        		 <h1 align="center" class="display-6 text-success text-uppercase">
-		        		 	{{$post->title}}
-		        		 </h1>
+		        		<h1  class="display-6 text-success text-uppercase text-center">{{$post->title}}</h1>
 		        	</div>
-		        	<div class="text-muted" style="padding-right: 4%; text-align: center;">	
+		        	
+		        	<div class="text-muted" style="padding: 4%;">	
 					       	  <?php $tam = strlen($post->body); 
 								if ($tam <= 200){
 									echo $post->body;
@@ -49,24 +47,28 @@
 								}	        		
 					          ?>
 					</div>
-			 	
-				<div>   				    									       
-					<a href="{{route('comments', $post->id) }}" class="btn btn-primary btn-lg">Comentar Post</a>
-				</div>
-
 
 					<div align="center">	<!-- class="toast hide" -->					
-			     	    <small style="position: absolute;" class="text-primary ">
+			     	    <small style="" class="text-primary h4 ">
 			        		@if($post->created_at)
 			        			publicado: {{ date_format($post->created_at, 'j M Y') }}
 			        		@endif
 			            </small>
-    		         </div>
-			      	
-		        </div>
+    		        </div>
 
+			 	 	<?php $nro = Count($post->comments); ?>
+				 	<div class="flex">
+				 		<div>
+				 			{{$nro}} <i><b>comentario(s)</b></i>
+				 		</div>
+						<div style="margin-left: 30%;">   				    									       
+							<a href="{{route('comments', $post->id) }}" class="btn btn-primary btn-lg" >Comentar Post</a>
+						</div>
+				 	</div>	
+			     </div>
 
 			</div> 
+			<br>
 	@empty
 	     <h1 class="text-danger text-center">No hay resultados</h1>  
 	@endforelse

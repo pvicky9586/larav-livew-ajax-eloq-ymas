@@ -13,6 +13,5 @@ class PostTag extends Model
         'created_at'
        ];
 
-
 }
 

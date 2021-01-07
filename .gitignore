@@ -18,6 +18,4 @@ resources/views/bootbox.blade.php
 resources/views/layouts/layout2.blade.php
 
 /public/js/larav_ajax.js
-resources/views/crud_larav-ajax/index2.blade.php
 resources/views/selecDinami.blade.php
-resources/views/PublicPost/Post-list2.blade.php

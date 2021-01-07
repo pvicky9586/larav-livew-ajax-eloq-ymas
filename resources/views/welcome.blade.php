@@ -37,6 +37,7 @@
 
 
   <!--Public Post -->
+}
 <div  class="text-center rounded-bottom">
     <img src="{{asset('images/public.jpeg')}}" class="img-tam">
       <a href="{{ route('Public') }}"><h2 class="display-3  text-success">Publicaciones</h2></a>

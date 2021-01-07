@@ -39,11 +39,13 @@ class Post extends Model
 
 
 
-    // public function tags() //extracion de tags de un post
+    // public function tags() 
     // {
-    //        return $this->hasMany(PostTag::class);
+    //     return $this->hasManyThrough(Tag::class, PostTag::class);
     // }
-
+    // public function tag(){
+    //     return $this->belongsToMany(Tag::class, PostTag::class);
+    // }
 
 
 }

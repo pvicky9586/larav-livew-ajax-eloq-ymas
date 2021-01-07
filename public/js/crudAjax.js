@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Scopes</title>
-
-    <!-- Bootstrap -->
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- 
-
-    <link href="{{ asset('css/MyStyles.css') }}" rel="stylesheet">
-  </head>
-<body>
-
-  <!-- CON BOOTSTRAP 3 -->
-  <nav  class="navbar navbar-ststic-top bg-cle" role="navigation">  
-        <div class="" style="">
-           <h2 class="">
-              Laravel - Livewire - AJAX & Eloquent
-            </h2>
-                 
-            <div style=""> 
-              <span class="">                 
-                <a class="text-bold link-info h4" href="{{ route('inicio')}}">
-                  <img src="{{asset('images/icons/home.png')}}" width="40" alt="  ">Home</a> 
-              </span>
-            </div>
-        </div>
-    </nav>
-
-
-
-  <div class="container" style="margin-left: 5%; margin-right:10%; ">
-       @yield('content')
-  </div>
-   
-  <!-- CDN .js Bootstrap 3.3.5 & jquery 2.1.3 -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-<script type="text/javascript">
- {{-- ajax Form Add Post--}}
+{{-- ajax Form Add Post--}}
   $(document).on('click','.create-modal', function() {
     $('#create').modal('show');
     $('.form-horizontal').show();
@@ -52,7 +7,7 @@
   $("#add").click(function() {
     $.ajax({
       type: 'POST', //envio mediante post
-      url: 'store',  //method de la ruta controller
+      url: 'addPost',  //method de la ruta controller
       data: {
         '_token': $('input[name=_token]').val(),
         'title': $('input[name=title]').val(),
@@ -167,9 +122,3 @@ function closeModal(){
   $('#body').val('');
  // $('.modal').fadeOut();
 }
-
-</script>
-
-
-</body>
-</html>

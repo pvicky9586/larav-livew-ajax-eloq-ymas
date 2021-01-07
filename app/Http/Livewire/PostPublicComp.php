@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Comment;
+use App\Models\PostTag;
 
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
@@ -26,7 +27,7 @@ class PostPublicComp extends Component
 	public $categorys, $tags, $tag_id=[];
 	public $factory = 0;
 	public $File='';
-	public $post, $mensaje,  $comments, $commentsPost;
+	public $post, $mensaje,  $comments, $commentsPost, $nro;
 	//public $comentar,  $post_id=[];
 	//public $name, $email;
 	public $updateMode = false;
@@ -97,7 +98,11 @@ class PostPublicComp extends Component
 
 		$Ntag = Count($this->tag_id);
         for($i=0; $i<$Ntag; $i++){
-			$save->tags()->create([
+			// $save->tags()->create([
+			// 	'post_id'=>$save->id,
+			// 	'tag_id' => $this->tag_id[$i],
+			// ]);
+			PostTag::create([
 				'post_id'=>$save->id,
 				'tag_id' => $this->tag_id[$i],
 			]);
@@ -108,26 +113,23 @@ class PostPublicComp extends Component
 	}
 
 
-	public function savecomment($id){
-		$NewCom = Comment::create([
-			'name' => $this->name,
-			'email' => $this->email,
-			'comment' => $this->comentar,
-			'post_id' => $id,
-		 ]);
-		$this->clearComment();
-		return back();	
-
-	}
+	// public function savecomment($id){
+	// 	$NewCom = Comment::create([
+	// 		'name' => $this->name,
+	// 		'email' => $this->email,
+	// 		'comment' => $this->comentar,
+	// 		'post_id' => $id,
+	// 	 ]);
+	// 	$this->clearComment();
+	// 	return back();	
+	// }
 	
 
-	public function clearComment(){
-
-		$this->name='';
-		$this->email='';
-		$this->comentar='';
-
-	}
+	// public function clearComment(){
+	// 	$this->name='';
+	// 	$this->email='';
+	// 	$this->comentar='';
+	// }
 
 
 	public function default(){

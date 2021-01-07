@@ -8,7 +8,7 @@
 
     <div class="container">
 
-        <h1 class="display-2 text-center text-blue top">{{$post->title}}</h1>
+        <h1 class="display-3 text-center text-blue top">{{$post->title}}</h1>
         <label class="h5 text-center">{{$post->body}}</label>
         
 <!-- {{$commentsPost}} -->
@@ -43,9 +43,9 @@
 
     <form action="{{ route('store') }}" method="POST">
         @csrf
-        <label class="text-bold top text-viol">Comentar</label> 
-        <div class="form-group"> <!-- class="ckeditor"-->
-           <small class=" text-bold" >
+        <label class="text-bold top text-viol h4 form-control" style="background: #cfebae">Comentar</label> 
+        <div class="form-group" style="background:  #f0dbc5 "> <!-- class="ckeditor"-->
+           <small class="text-bold h4" >
             <b>Nombre</b> <input type="text" name="name" style="width: 40%; margin-right: 8%;">
             <b>Email</b> <input type="text" name="email" style="width: 30%;">
            </small>  
